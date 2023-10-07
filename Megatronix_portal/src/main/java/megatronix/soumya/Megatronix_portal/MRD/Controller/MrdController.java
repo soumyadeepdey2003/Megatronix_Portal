@@ -19,9 +19,9 @@ public class MrdController {
     @Autowired
     private MrdRepo mrdRepository;
 
-    @GetMapping("/register")
-    public String showRegistrationForm(Model model) {
-        model.addAttribute("user", new MrdModel());
+    @GetMapping("/registration")
+    public String registrationForm(Model model) {
+        model.addAttribute("User", new MrdModel());
         return "registration";
     }
 
@@ -34,15 +34,16 @@ public class MrdController {
         return "registration-success";
     }
 
-    @PostMapping("/register")
-    public String processRegistration(@ModelAttribute("user") MrdModel user, Model model) {
+    @PostMapping("/registration")
+    public String register(@ModelAttribute MrdModel member, Model model) {
         try {
-            // Call the registerUser method
-            MrdModel registeredUser = service.registerUser(user);
-            return "redirect:/registration-success?id=" + registeredUser.getId();
-        } catch (IllegalArgumentException e) {
-            model.addAttribute("error", e.getMessage());
+            MrdModel  registeredMember = service.registerMember(member);
+            model.addAttribute("uniqueId", registeredMember.getId());
+            return "registration-success";
+        } catch (Exception e) {
+            // Handle validation errors
             return "registration";
         }
     }
+
 }

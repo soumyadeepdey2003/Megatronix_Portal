@@ -10,17 +10,15 @@ public class MrdService {
 
     @Autowired
     private MrdRepo MrdRepository;
-    public MrdModel registerUser(MrdModel user) {
-        // Check if email and phone are unique
-        if (MrdRepository.findByEmail(user.getEmail()) != null) {
-            throw new IllegalArgumentException("error, Email already exists!");
-        }
-        if (MrdRepository.findByPhoneNumber(user.getPhoneNumber()) != null) {
-            throw new IllegalArgumentException("error, Phone number already exists!");
+
+
+    public MrdModel registerMember(MrdModel member) {
+        if (MrdRepository.existsByEmail(member.getEmail()) ||
+                MrdRepository.existsByPhoneNumber(member.getPhoneNumber())) {
+            throw new RuntimeException("Email or phone number already exists.");
         }
 
-        // Save the user to the database
-        return MrdRepository.save(user);
-
+        return MrdRepository.save(member);
     }
+
 }

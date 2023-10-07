@@ -1,53 +1,22 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>User Registration</title>
-    <style>
-        .error-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #ffcccc;
-            padding: 10px;
-            border: 1px solid #f00;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Member Registration</title>
+    <!-- Add your CSS styles here -->
 </head>
 <body>
-<h2>User Registration</h2>
-<!-- Error Popup -->
-<div th:if="${error}" class="error-popup">
-    <p th:text="${error}"></p>
-    <button onclick="closeErrorPopup()">Close</button>
-</div>
-
-<form th:action="@{/register}" th:object="${user}" method="post">
-
-    <p>Name: <input type="text" th:field="*{name}" required /></p>
-    <p>College: <input type="text" th:field="*{college}" required /></p>
-    <p>Year: <input type="number" th:field="*{year}" required /></p>
-    <p>Department: <input type="text" th:field="*{department}" required /></p>
-    <p>Roll: <input type="text" th:field="*{roll}" required /></p>
-    <p>Phone Number: <input type="text" th:field="*{phoneNumber}" required /></p>
-    <p>Email: <input type="email" th:field="*{email}" required /></p>
-    <p style="color: red" th:if="${error}" th:text="${error}"></p>
-
-    <button type="submit">Register</button>
+<h1>Member Registration</h1>
+<form method="post" action="/registration">
+    <input type="text" name="name" placeholder="Name" required><br>
+    <input type="text" name="college" placeholder="College" required><br>
+    <input type="number" name="year" placeholder="Year" required><br>
+    <input type="text" name="department" placeholder="Department" required><br>
+    <input type="text" name="roll" placeholder="Roll" required><br>
+    <input type="text" name="phoneNumber" placeholder="Phone Number" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="submit" value="Register">
 </form>
-
-<script>
-    // JavaScript function to close the error popup
-    function closeErrorPopup() {
-        var errorPopup = document.querySelector('.error-popup');
-        errorPopup.style.display = 'none';
-    }
-</script>
+<!-- Add your JavaScript here for validation -->
 </body>
 </html>
-
-
-
-
-
