@@ -11,7 +11,7 @@
 	<groupId>megatronix.soumya</groupId>
 	<artifactId>Megatronix_portal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Megatronix_portal</name>
+	<name>2023_megatronix_portal</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>
@@ -20,6 +20,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.thymeleaf</groupId>
@@ -74,7 +78,7 @@
 				<configuration>
 					<excludes>
 						<exclude>
-							<groupId>org.projectlombok</groupId>
+							<groupId>org.project-lombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>

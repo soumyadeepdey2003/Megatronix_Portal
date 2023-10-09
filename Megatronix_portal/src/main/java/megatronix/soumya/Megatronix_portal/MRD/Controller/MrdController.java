@@ -21,7 +21,8 @@ public class MrdController {
 
     @GetMapping("/registration")
     public String registrationForm(Model model) {
-        model.addAttribute("User", new MrdModel());
+        // Use "user" as the attribute name to match the form in registration.html
+        model.addAttribute("user", new MrdModel());
         return "registration";
     }
 
@@ -30,14 +31,15 @@ public class MrdController {
         // Fetch the user by ID and display the success page
         MrdModel user = mrdRepository.findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
+        // Use "user" as the attribute name to match the success page template
         model.addAttribute("user", user);
         return "registration-success";
     }
 
     @PostMapping("/registration")
-    public String register(@ModelAttribute MrdModel member, Model model) {
+    public String register(@ModelAttribute("user") MrdModel member, Model model) {
         try {
-            MrdModel  registeredMember = service.registerMember(member);
+            MrdModel registeredMember = service.registerMember(member);
             model.addAttribute("uniqueId", registeredMember.getId());
             return "registration-success";
         } catch (Exception e) {
@@ -45,5 +47,4 @@ public class MrdController {
             return "registration";
         }
     }
-
 }
