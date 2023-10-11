@@ -4,11 +4,10 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "RoboticsRd")
+@Table(name = "ElectrialRd")
 @NoArgsConstructor
-public class RoboticsModel {
-    public RoboticsModel(String teamname, String selectedcivilevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
-        this.teamname = teamname;
+public class ElectrialModel {
+    public ElectrialModel(String selectedcivilevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
         this.selectedcivilevent=selectedcivilevent;
         this.gid1=gid1;
         this.gid2=gid2;
@@ -22,13 +21,14 @@ public class RoboticsModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String  teamname;
+
     private  String selectedcivilevent;
     private Long gid1;
     private Long gid2;
     private Long gid3;
     private Long gid4;
     private Long gid5;
+
 
     private String number1;
     private String number2;
@@ -85,14 +85,6 @@ public class RoboticsModel {
 
     public void setGid5(Long gid5) {
         this.gid5 = gid5;
-    }
-
-    public String getTeamname() {
-        return teamname;
-    }
-
-    public void setTeamname(String teamname) {
-        this.teamname = teamname;
     }
 
     public String getNumber1() {

@@ -1,1 +1,49 @@
-2
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Electrical RD Form</title>
+</head>
+<body>
+<h1>Civil RD Form</h1>
+<form action="@{/rd/electrical}" method="post" th:object="${codingRd}">
+
+
+    <label for="selectedelectricalevent">Select Electrical Event:</label>
+    <select id="selectedelectricalevent" name="selectedelectricalevent" th:field="*{selectedelectricalevent}">
+        <option value="Event1">Web</option>
+        <option value="Event2">CP</option>
+
+    </select>
+    <br><br>
+
+    <label for="gid1">GID1:</label>
+    <input type="number" id="gid1" name="gid1" th:field="*{gid1}">
+    <br><br>
+
+    <label for="gid2">GID2:</label>
+    <input type="number" id="gid2" name="gid2" th:field="*{gid2}">
+    <br><br>
+
+    <label for="gid3">GID3:</label>
+    <input type="number" id="gid3" name="gid3" th:field="*{gid3}">
+    <br><br>
+
+    <label for="gid4">GID4:</label>
+    <input type="number" id="gid4" name="gid4" th:field="*{gid4}">
+    <br><br>
+
+    <label for="gid5">GID5:</label>
+    <input type="number" id="gid5" name="gid5" th:field="*{gid5}">
+    <br><br>
+
+    <label for="number1">Phone Number:</label>
+    <input type="text" id="number1" name="number1" th:field="*{number1}">
+
+    <br><br>
+    <label for="number1">Phone Number 2:</label>
+    <input type="text" id="number2" name="number2" th:field="*{number2}">
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
