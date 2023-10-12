@@ -11,3 +11,4 @@ public class Rdmain {
         this.selectedDomain = selectedDomain;
     }
 }
+//model, service , repo, controller
