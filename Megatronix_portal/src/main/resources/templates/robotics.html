@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Robotics RD Form</h1>
-<form action="@{/rd/robotics}" method="post" th:object="${codingRd}">
+<form action="@{/rd/robotics}" method="post" th:object="${roboticsRd}">
     <label for="teamname">Team Name:</label>
     <input type="text" id="teamname" name="teamname" th:field="*{teamname}">
     <br><br>
@@ -16,6 +16,7 @@
         <option value="Event2">CP</option>
         <option value="Event3">Debug</option>
         <option value="Event4">Debug</option>
+        <option value="Event5">Debug</option>
     </select>
     <br><br>
 

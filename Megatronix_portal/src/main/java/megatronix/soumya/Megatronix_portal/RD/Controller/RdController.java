@@ -1,8 +1,7 @@
 package megatronix.soumya.Megatronix_portal.RD.Controller;
 
 
-import megatronix.soumya.Megatronix_portal.RD.Model.CodingModel;
-import megatronix.soumya.Megatronix_portal.RD.Model.Rdmain;
+import megatronix.soumya.Megatronix_portal.RD.Model.*;
 import megatronix.soumya.Megatronix_portal.RD.Service.RdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
@@ -66,20 +65,46 @@ public class RdController {
 
     @PostMapping("/rd")
     @Async
-    public CompletableFuture<String> submitForm(@ModelAttribute("rdmain") Rdmain rdmain, RedirectAttributes redirectAttributes) {
+    public CompletableFuture<String> submitForm(@ModelAttribute("rdmain") Rdmain rdmain, Model model, RedirectAttributes redirectAttributes) {
         String selectedDomain = rdmain.getSelectedDomain();
 
         // Use the selected domain to construct the redirect path
         redirectAttributes.addAttribute("selectedDomain", selectedDomain);
 
+        // Add the codingRd attribute to the model
+        model.addAttribute("codingRd", new CodingModel());
+        model.addAttribute("roboticsRd", new RoboticsModel());
+        model.addAttribute("civilRd", new CivilModel());
+        model.addAttribute("electrialRd", new ElectrialModel());
+        model.addAttribute("gamingRd", new GamingModel());
+        model.addAttribute("generalRd", new GeneralModel());
         return rdService.handleSelectedDomain(selectedDomain);
     }
+
 
     @GetMapping("/rd/{selectedDomain}")
     @Async
     public CompletableFuture<String> showResult(@PathVariable String selectedDomain, Model model) {
-        // You can handle the selected domain here and render the result accordingly
+
+        if (selectedDomain.equals("coding")) {
+            model.addAttribute("codingRd", new CodingModel());
+        } else if (selectedDomain.equals("robotics")) {
+            model.addAttribute("roboticsRd", new RoboticsModel());
+        } else if (selectedDomain.equals("civil")) {
+            model.addAttribute("civilRd", new CivilModel());
+        } else if (selectedDomain.equals("electrical")) {
+            model.addAttribute("electricalRd", new ElectrialModel());
+        } else if (selectedDomain.equals("gaming")) {
+            model.addAttribute("gamingRd", new GamingModel());
+        } else if (selectedDomain.equals("general")) {
+            model.addAttribute("generalRd", new GeneralModel());
+        }
+
+
         model.addAttribute("selectedDomain", selectedDomain);
-        return CompletableFuture.completedFuture(selectedDomain);
+
+
+        return CompletableFuture.completedFuture(selectedDomain); 
     }
+
 }

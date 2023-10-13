@@ -5,9 +5,9 @@
 </head>
 <body>
 <h1>Select a Domain:</h1>
-<form th:action="@{/rd}" method="post">
+<form action="@{/rd}" method="post">
     <label for="domain">Choose a Domain:</label>
-    <select id="domain" name="selectedDomain" th:field="*{selectedDomain}">
+    <select id="domain" name="domain" th:field="${rdmain.selectedDomain}">
         <option value="coding">Coding Domain</option>
         <option value="robotics">Robotics Domain</option>
         <option value="civil">Civil Domain</option>
@@ -18,6 +18,5 @@
     <br><br>
     <input type="submit" value="Submit">
 </form>
-
 </body>
 </html>

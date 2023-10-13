@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "RoboticsRd")
 @NoArgsConstructor
 public class RoboticsModel {
-    public RoboticsModel(String teamname, String selectedcivilevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
+    public RoboticsModel(String teamname, String selectedroboticsevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
         this.teamname = teamname;
-        this.selectedcivilevent=selectedcivilevent;
+        this.selectedroboticsevent=selectedroboticsevent;
         this.gid1=gid1;
         this.gid2=gid2;
         this.gid3=gid3;
@@ -23,7 +23,7 @@ public class RoboticsModel {
     private Long id;
 
     private String  teamname;
-    private  String selectedcivilevent;
+    private  String selectedroboticsevent;
     private Long gid1;
     private Long gid2;
     private Long gid3;
@@ -42,12 +42,12 @@ public class RoboticsModel {
     }
 
 
-    public String getselectedcivilevent() {
-        return selectedcivilevent;
+    public String getselectedroboticsevent() {
+        return selectedroboticsevent;
     }
 
-    public void setselectedcivilevent(String selectedcivilevent) {
-        this.selectedcivilevent = selectedcivilevent;
+    public void setselectedroboticsevent(String selectedroboticsevent) {
+        this.selectedroboticsevent = selectedroboticsevent;
     }
 
     public Long getGid1() {
