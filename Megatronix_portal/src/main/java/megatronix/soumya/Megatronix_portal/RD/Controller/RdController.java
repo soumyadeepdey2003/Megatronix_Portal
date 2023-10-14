@@ -28,7 +28,7 @@ public class RdController {
         return CompletableFuture.completedFuture("rd");
     }
 
-    // Handle form submission
+
 //    @PostMapping("/rd")
 //    @Async
 //    public CompletableFuture<String> submitForm(@ModelAttribute("rdmain") Rdmain rdmain, RedirectAttributes redirectAttributes) {
@@ -52,16 +52,7 @@ public class RdController {
 //        else
 //            return CompletableFuture.completedFuture("rd");
 //    }
-//
-//    @GetMapping("/rd/{selectedDomain}")
-//    @Async
-//    public CompletableFuture<String> registrationFormrd(@PathVariable String selectedDomain, Model model) {
-//
-//        String templateName = selectedDomain + ".html";
-//
-//        model.addAttribute("selectedDomain", selectedDomain);
-//        return CompletableFuture.completedFuture(templateName);
-//    }
+
 
     @PostMapping("/rd")
     @Async
@@ -75,11 +66,14 @@ public class RdController {
         model.addAttribute("codingRd", new CodingModel());
         model.addAttribute("roboticsRd", new RoboticsModel());
         model.addAttribute("civilRd", new CivilModel());
-        model.addAttribute("electrialRd", new ElectrialModel());
+        model.addAttribute("electricalRd", new ElectrialModel());
         model.addAttribute("gamingRd", new GamingModel());
         model.addAttribute("generalRd", new GeneralModel());
+
         return rdService.handleSelectedDomain(selectedDomain);
     }
+
+
 
 
     @GetMapping("/rd/{selectedDomain}")
@@ -104,7 +98,7 @@ public class RdController {
         model.addAttribute("selectedDomain", selectedDomain);
 
 
-        return CompletableFuture.completedFuture(selectedDomain); 
+        return CompletableFuture.completedFuture(selectedDomain);
     }
 
 }

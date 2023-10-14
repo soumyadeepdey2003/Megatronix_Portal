@@ -25,12 +25,16 @@ public class ElectrialModel {
     private  String selectedcivilevent;
     private Long gid1;
     private Long gid2;
+    @Column(nullable = true)
     private Long gid3;
+    @Column(nullable = true)
     private Long gid4;
+    @Column(nullable = true)
     private Long gid5;
 
 
     private String number1;
+    @Column(nullable = true)
     private String number2;
 
     public Long getId() {

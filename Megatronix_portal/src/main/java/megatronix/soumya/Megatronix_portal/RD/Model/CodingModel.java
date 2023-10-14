@@ -21,6 +21,7 @@ public class CodingModel {
     private String teamname;
     private  String selectedcodingevent;
     private Long gid1;
+    @Column(nullable = true)
     private Long gid2;
 
     private String number1;
