@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CodingService {
     @Autowired
@@ -14,9 +16,14 @@ public class CodingService {
 
     @Async
     public CodingModel CodingMainRd(CodingModel member) {
-        if((coding.existsByGid1(member.getGid1()) && !coding.existsByGid2IsNull() && coding.existsByGid2(member.getGid2())) || (coding.existsByGid1(member.getGid1()) ) )
-            throw new RuntimeException("gid is already exists.");
-
+        if((coding.existsByGid1(member.getGid1()) && !coding.existsByGid2IsNull() && coding.existsByGid2(member.getGid2())) || (coding.existsByGid1(member.getGid1()) ) ) {
+            List<CodingModel> list =coding.findByGid(member.getGid1());
+            for(CodingModel i : list) {
+                if (member.getSelectedcodingevent().equals(i.getSelectedcodingevent())) {
+                    throw new RuntimeException("gid is already exists.");
+                }
+            }
+        }
         return coding.save(member);
     }
     @Async
