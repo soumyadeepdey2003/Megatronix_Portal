@@ -16,7 +16,7 @@ public class CodingService {
 
     @Async
     public CodingModel CodingMainRd(CodingModel member) {
-        if((coding.existsByGid1(member.getGid1()) && !coding.existsByGid2IsNull() && coding.existsByGid2(member.getGid2())) || (coding.existsByGid1(member.getGid1()) ) ) {
+        if((coding.existsByGid1(member.getGid1()) && !coding.existsByGid2IsNull() && coding.existsByGid2(member.getGid2()))  ) {
             List<CodingModel> list =coding.findByGid(member.getGid1());
             for(CodingModel i : list) {
                 if (member.getSelectedcodingevent().equals(i.getSelectedcodingevent())) {
