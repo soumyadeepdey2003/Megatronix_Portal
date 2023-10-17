@@ -4,6 +4,8 @@ import megatronix.soumya.Megatronix_portal.RD.Model.CivilModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface CivilRepo  extends JpaRepository<CivilModel, Long> {
     boolean existsByGid1(Long gid1);
@@ -14,4 +16,6 @@ public interface CivilRepo  extends JpaRepository<CivilModel, Long> {
     boolean existsByGid4IsNull();
     boolean existsByGid5(Long gid5);
     boolean existsByGid5IsNull();
+
+    List<CivilModel> findByGid(Long gid);
 }

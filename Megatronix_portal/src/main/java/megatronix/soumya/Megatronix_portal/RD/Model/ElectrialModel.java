@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "ElectrialRd")
 @NoArgsConstructor
 public class ElectrialModel {
-    public ElectrialModel(String selectedcivilevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
-        this.selectedcivilevent=selectedcivilevent;
+    public ElectrialModel(String selectedelectrialevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
+        this.selectedelectrialevent=selectedelectrialevent;
         this.gid1=gid1;
         this.gid2=gid2;
         this.gid3=gid3;
@@ -22,7 +22,7 @@ public class ElectrialModel {
     private Long id;
 
 
-    private  String selectedcivilevent;
+    private  String selectedelectrialevent;
     private Long gid1;
     private Long gid2;
     @Column(nullable = true)
@@ -46,12 +46,12 @@ public class ElectrialModel {
     }
 
 
-    public String getselectedcivilevent() {
-        return selectedcivilevent;
+    public String getselectedelectrialevent() {
+        return selectedelectrialevent;
     }
 
-    public void setselectedcivilevent(String selectedcivilevent) {
-        this.selectedcivilevent = selectedcivilevent;
+    public void setselectedelectrialevent(String selectedelectrialevent) {
+        this.selectedelectrialevent = selectedelectrialevent;
     }
 
     public Long getGid1() {

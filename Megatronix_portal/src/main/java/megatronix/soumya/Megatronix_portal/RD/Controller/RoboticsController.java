@@ -17,7 +17,7 @@ public class RoboticsController {
     @Autowired
     private RoboticsService service;
 
-    @PostMapping("/rd/coding")
+    @PostMapping("/rd/robotics")
     @Async
     public CompletableFuture<String> register(@ModelAttribute("Rduser") RoboticsModel member, Model model) {
         try {
