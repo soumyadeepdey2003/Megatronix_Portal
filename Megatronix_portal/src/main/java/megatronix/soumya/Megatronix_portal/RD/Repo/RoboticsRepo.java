@@ -18,5 +18,6 @@ public interface RoboticsRepo extends JpaRepository<RoboticsModel, Long> {
     boolean existsByGid5(Long gid5);
     boolean existsByGid5IsNull();
 
-    List<RoboticsModel> findByGid(Long gid);
+
+    List<RoboticsModel> findBySelectedroboticsevent(String getselectedroboticsevent);
 }

@@ -46,11 +46,11 @@ public class ElectrialModel {
     }
 
 
-    public String getselectedelectrialevent() {
+    public String getSelectedelectrialevent() {
         return selectedelectrialevent;
     }
 
-    public void setselectedelectrialevent(String selectedelectrialevent) {
+    public void setSelectedelectrialevent(String selectedelectrialevent) {
         this.selectedelectrialevent = selectedelectrialevent;
     }
 

@@ -45,11 +45,11 @@ public class CivilModel {
     }
 
 
-    public String getselectedcivilevent() {
+    public String getSelectedcivilevent() {
         return selectedcivilevent;
     }
 
-    public void setselectedcivilevent(String selectedcivilevent) {
+    public void setSelectedcivilevent(String selectedcivilevent) {
         this.selectedcivilevent = selectedcivilevent;
     }
 

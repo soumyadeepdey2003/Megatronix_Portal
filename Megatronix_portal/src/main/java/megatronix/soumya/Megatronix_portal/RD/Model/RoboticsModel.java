@@ -23,6 +23,7 @@ public class RoboticsModel {
     private Long id;
 
     private String  teamname;
+
     private  String selectedroboticsevent;
     private Long gid1;
     private Long gid2;

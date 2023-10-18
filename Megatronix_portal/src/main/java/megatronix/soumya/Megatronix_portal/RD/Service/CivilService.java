@@ -1,6 +1,7 @@
 package megatronix.soumya.Megatronix_portal.RD.Service;
 
 import megatronix.soumya.Megatronix_portal.RD.Model.CivilModel;
+import megatronix.soumya.Megatronix_portal.RD.Model.CodingModel;
 import megatronix.soumya.Megatronix_portal.RD.Model.RoboticsModel;
 import megatronix.soumya.Megatronix_portal.RD.Repo.CivilRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,16 @@ public class CivilService {
 
     @Async
     public CivilModel CivilMainRd(CivilModel member) {
-        if(civil.existsByGid1(member.getGid1()) || civil.existsByGid2(member.getGid2()) || (civil.existsByGid3(member.getGid3())&& !civil.existsByGid3IsNull())  ||(civil.existsByGid4(member.getGid4())&& !civil.existsByGid4IsNull()) || (civil.existsByGid5(member.getGid5())&& !civil.existsByGid5IsNull()))
-        {
-            List<CivilModel> list =civil.findByGid(member.getGid1());
-            for(CivilModel i : list) {
-                if (member.getselectedcivilevent().equals(i.getselectedcivilevent())) {
-                    throw new RuntimeException("gid is already exists.");
-                }
+        List<CivilModel> list =civil.findBySelectedcivilevent(member.getSelectedcivilevent());
+        for(CivilModel i : list) {
+            if (member.getGid1().equals(i.getGid1())||
+                    member.getGid2().equals(i.getGid2()) ||
+                    (member.getGid3().equals(i.getGid3()) && civil.existsByGid3IsNull()) ||
+                    (member.getGid4().equals(i.getGid4()) && civil.existsByGid4IsNull()) ||
+                    (member.getGid5().equals(i.getGid5()) && civil.existsByGid5IsNull()) )
+            {
+
+                throw new RuntimeException("gid is already exists.");
             }
         }
         return civil.save(member);

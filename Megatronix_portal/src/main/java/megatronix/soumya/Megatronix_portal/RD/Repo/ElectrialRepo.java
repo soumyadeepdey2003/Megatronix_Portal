@@ -18,5 +18,6 @@ public interface ElectrialRepo extends JpaRepository<ElectrialModel, Long> {
     boolean existsByGid5(Long gid5);
     boolean existsByGid5IsNull();
 
-    List<ElectrialModel> findByGid(Long gid);
+
+    List<ElectrialModel> findBySelectedelectrialevent(String selectedelectrialevent);
 }

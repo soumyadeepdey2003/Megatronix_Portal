@@ -16,14 +16,14 @@ public class CodingService {
 
     @Async
     public CodingModel CodingMainRd(CodingModel member) {
-        if((coding.existsByGid1(member.getGid1()) && !coding.existsByGid2IsNull() && coding.existsByGid2(member.getGid2()))  ) {
-            List<CodingModel> list =coding.findByGid(member.getGid1());
+
+        List<CodingModel> list =coding.findBySelectedcodingevent(member.getSelectedcodingevent());
             for(CodingModel i : list) {
-                if (member.getSelectedcodingevent().equals(i.getSelectedcodingevent())) {
+                if (member.getGid1().equals(i.getGid1())|| (member.getGid2().equals(i.getGid2()) && coding.existsByGid2IsNull())) {
                     throw new RuntimeException("gid is already exists.");
                 }
             }
-        }
+
         return coding.save(member);
     }
     @Async

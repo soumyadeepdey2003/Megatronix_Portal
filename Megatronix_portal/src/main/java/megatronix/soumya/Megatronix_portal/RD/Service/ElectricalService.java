@@ -1,5 +1,6 @@
 package megatronix.soumya.Megatronix_portal.RD.Service;
 
+import megatronix.soumya.Megatronix_portal.RD.Model.CivilModel;
 import megatronix.soumya.Megatronix_portal.RD.Model.ElectrialModel;
 import megatronix.soumya.Megatronix_portal.RD.Model.RoboticsModel;
 import megatronix.soumya.Megatronix_portal.RD.Repo.ElectrialRepo;
@@ -16,13 +17,16 @@ public class ElectricalService {
 
     @Async
     public ElectrialModel ElectrialMainRd(ElectrialModel member) {
-        if(electrial.existsByGid1(member.getGid1()) || electrial.existsByGid2(member.getGid2()) || (electrial.existsByGid3(member.getGid3())&& !electrial.existsByGid3IsNull())  ||(electrial.existsByGid4(member.getGid4())&& !electrial.existsByGid4IsNull()) || (electrial.existsByGid5(member.getGid5())&& !electrial.existsByGid5IsNull()))
-        {
-            List<ElectrialModel> list =electrial.findByGid(member.getGid1());
-            for(ElectrialModel i : list) {
-                if (member.getselectedelectrialevent().equals(i.getselectedelectrialevent())) {
-                    throw new RuntimeException("gid is already exists.");
-                }
+        List<ElectrialModel> list =electrial.findBySelectedelectrialevent(member.getSelectedelectrialevent());
+        for(ElectrialModel i : list) {
+            if (member.getGid1().equals(i.getGid1())||
+                    member.getGid2().equals(i.getGid2()) ||
+                    (member.getGid3().equals(i.getGid3()) && electrial.existsByGid3IsNull()) ||
+                    (member.getGid4().equals(i.getGid4()) && electrial.existsByGid4IsNull()) ||
+                    (member.getGid5().equals(i.getGid5()) && electrial.existsByGid5IsNull()) )
+            {
+
+                throw new RuntimeException("gid is already exists.");
             }
         }
         return electrial.save(member);
@@ -33,7 +37,7 @@ public class ElectricalService {
     }
     @Async
     public ElectrialModel ElectrialRd(ElectrialModel member) {
-        if(member.getselectedelectrialevent().equals("Event2"))
+        if(member.getSelectedelectrialevent().equals("Event2"))
             return ElectrialOnSportRd( member);
         else
             return ElectrialMainRd(member);
