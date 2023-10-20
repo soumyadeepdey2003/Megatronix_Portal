@@ -37,6 +37,7 @@ public class MrdModel {
     private String roll;
 
     @Column(nullable = false, unique = true)
+    @NaturalId(mutable = true)
     private String email;
 
     @Column(nullable = false)
