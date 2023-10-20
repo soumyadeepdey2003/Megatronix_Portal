@@ -2,6 +2,7 @@ package megatronix.soumya.Megatronix_portal.MRD.Model;
 
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.NaturalId;
 
 
 @Entity
