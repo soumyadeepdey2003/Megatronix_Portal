@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class CivilService {
@@ -16,7 +17,7 @@ public class CivilService {
     private CivilRepo civil;
 
     @Async
-    public CivilModel CivilMainRd(CivilModel member) {
+    public CompletableFuture<CivilModel> CivilMainRd(CivilModel member) {
         List<CivilModel> list =civil.findBySelectedcivilevent(member.getSelectedcivilevent());
         for(CivilModel i : list) {
             if (member.getGid1().equals(i.getGid1())||
@@ -29,7 +30,7 @@ public class CivilService {
                 throw new RuntimeException("gid is already exists.");
             }
         }
-        return civil.save(member);
+        return CompletableFuture.completedFuture(civil.save(member));
     }
 
 

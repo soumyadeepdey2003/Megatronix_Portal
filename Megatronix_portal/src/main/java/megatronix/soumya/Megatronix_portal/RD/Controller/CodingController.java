@@ -22,8 +22,8 @@ public class CodingController {
     @Async
     public CompletableFuture<String> register(@ModelAttribute("Rduser") CodingModel member, Model model) {
         try {
-            CodingModel registeredMember = service.CodingRd(member);
-            model.addAttribute("uniqueId", registeredMember.getId());
+            CompletableFuture<CodingModel> registeredMember = service.CodingRd(member);
+            model.addAttribute("uniqueId", registeredMember.get().getId());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors

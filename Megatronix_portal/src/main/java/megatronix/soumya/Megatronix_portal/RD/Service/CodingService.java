@@ -1,6 +1,5 @@
 package megatronix.soumya.Megatronix_portal.RD.Service;
 
-import megatronix.soumya.Megatronix_portal.MRD.Model.MrdModel;
 import megatronix.soumya.Megatronix_portal.RD.Model.CodingModel;
 import megatronix.soumya.Megatronix_portal.RD.Repo.CodingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +7,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class CodingService {
@@ -15,7 +15,7 @@ public class CodingService {
     private CodingRepo coding;
 
     @Async
-    public CodingModel CodingMainRd(CodingModel member) {
+    public CompletableFuture<CodingModel> CodingMainRd(CodingModel member) {
 
         List<CodingModel> list =coding.findBySelectedcodingevent(member.getSelectedcodingevent());
             for(CodingModel i : list) {
@@ -24,18 +24,18 @@ public class CodingService {
                 }
             }
 
-        return coding.save(member);
+        return CompletableFuture.completedFuture(coding.save(member));
     }
     @Async
-    public CodingModel CodingOnSportRd(CodingModel member) {
-        return coding.save(member);
+    public CompletableFuture<CodingModel> CodingOnSportRd(CodingModel member) {
+        return CompletableFuture.completedFuture(coding.save(member));
     }
     @Async
-    public CodingModel CodingRd(CodingModel member) {
+    public CompletableFuture<CodingModel> CodingRd(CodingModel member) {
         if(member.getSelectedcodingevent().equals("debug"))
-            return CodingOnSportRd( member);
+            return (CodingOnSportRd( member));
         else
-            return CodingMainRd(member);
+            return (CodingMainRd(member));
 
     }
 

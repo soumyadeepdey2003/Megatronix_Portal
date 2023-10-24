@@ -22,8 +22,8 @@ public class GamingController {
     @Async
     public CompletableFuture<String> register(@ModelAttribute("Rduser") GamingModel member, Model model) {
         try {
-            GamingModel registeredMember = service.GamingOnSportRd(member);
-            model.addAttribute("uniqueId", registeredMember.getId());
+            CompletableFuture<GamingModel> registeredMember = service.GamingOnSportRd(member);
+            model.addAttribute("uniqueId", registeredMember.get().getId());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors

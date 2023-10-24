@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.CompletableFuture;
+
 @Service
 public class MrdService {
 
@@ -13,13 +15,12 @@ public class MrdService {
     private MrdRepo MrdRepository;
 
     @Async
-    public MrdModel registerMember(MrdModel member) {
-        if (MrdRepository.existsByEmail(member.getEmail()) ||
-                MrdRepository.existsByPhoneNumber(member.getPhoneNumber())) {
+    public CompletableFuture<MrdModel> registerMember(MrdModel member) {
+        if (MrdRepository.existsByEmail(member.getEmail()) || MrdRepository.existsByPhoneNumber(member.getPhoneNumber())) {
             throw new RuntimeException("Email or phone number already exists.");
         }
 
-        return MrdRepository.save(member);
+        return CompletableFuture.completedFuture(MrdRepository.save(member));
     }
 
 }

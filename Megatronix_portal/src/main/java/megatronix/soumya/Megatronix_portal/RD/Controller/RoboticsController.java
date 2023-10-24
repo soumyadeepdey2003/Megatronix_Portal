@@ -21,8 +21,8 @@ public class RoboticsController {
     @Async
     public CompletableFuture<String> register(@ModelAttribute("Rduser") RoboticsModel member, Model model) {
         try {
-            RoboticsModel registeredMember = service.RoboticsRd(member);
-            model.addAttribute("uniqueId", registeredMember.getId());
+            CompletableFuture<RoboticsModel> registeredMember = service.RoboticsRd(member);
+            model.addAttribute("uniqueId", registeredMember.get().getId());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors

@@ -1,14 +1,13 @@
 package megatronix.soumya.Megatronix_portal.RD.Service;
 
-import megatronix.soumya.Megatronix_portal.RD.Model.CivilModel;
 import megatronix.soumya.Megatronix_portal.RD.Model.ElectrialModel;
-import megatronix.soumya.Megatronix_portal.RD.Model.RoboticsModel;
 import megatronix.soumya.Megatronix_portal.RD.Repo.ElectrialRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class ElectricalService {
@@ -16,7 +15,7 @@ public class ElectricalService {
     private ElectrialRepo electrial;
 
     @Async
-    public ElectrialModel ElectrialMainRd(ElectrialModel member) {
+    public CompletableFuture<ElectrialModel> ElectrialMainRd(ElectrialModel member) {
         List<ElectrialModel> list =electrial.findBySelectedelectrialevent(member.getSelectedelectrialevent());
         for(ElectrialModel i : list) {
             if (member.getGid1().equals(i.getGid1())||
@@ -29,14 +28,14 @@ public class ElectricalService {
                 throw new RuntimeException("gid is already exists.");
             }
         }
-        return electrial.save(member);
+        return CompletableFuture.completedFuture(electrial.save(member));
     }
     @Async
-    public ElectrialModel ElectrialOnSportRd(ElectrialModel member) {
-        return electrial.save(member);
+    public CompletableFuture<ElectrialModel> ElectrialOnSportRd(ElectrialModel member) {
+        return CompletableFuture.completedFuture(electrial.save(member));
     }
     @Async
-    public ElectrialModel ElectrialRd(ElectrialModel member) {
+    public CompletableFuture<ElectrialModel> ElectrialRd(ElectrialModel member) {
         if(member.getSelectedelectrialevent().equals("Event2"))
             return ElectrialOnSportRd( member);
         else

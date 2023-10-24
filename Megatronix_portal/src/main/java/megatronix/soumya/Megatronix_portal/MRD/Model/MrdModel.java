@@ -3,11 +3,13 @@ package megatronix.soumya.Megatronix_portal.MRD.Model;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.NaturalId;
+import org.springframework.scheduling.annotation.Async;
 
 
 @Entity
 @Table(name = "Mrd")
 @NoArgsConstructor
+@Async
 public class MrdModel {
     public MrdModel(String name,String college,String year,String department,String roll,String email,String phoneNumber){
         this.name=name;
@@ -38,7 +40,7 @@ public class MrdModel {
     private String roll;
 
     @Column(nullable = false, unique = true)
-    @NaturalId(mutable = true)
+//    @NaturalId(mutable = true)
     private String email;
 
     @Column(nullable = false)

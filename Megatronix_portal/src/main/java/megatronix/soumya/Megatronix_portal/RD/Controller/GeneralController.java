@@ -19,8 +19,8 @@ public class GeneralController {
     @Async
     public CompletableFuture<String> register(@ModelAttribute("Rduser") GeneralModel member, Model model) {
         try {
-            GeneralModel registeredMember = service.GeneralOnSportRd(member);
-            model.addAttribute("uniqueId", registeredMember.getId());
+            CompletableFuture<GeneralModel> registeredMember = service.GeneralOnSportRd(member);
+            model.addAttribute("uniqueId", registeredMember.get().getId());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors

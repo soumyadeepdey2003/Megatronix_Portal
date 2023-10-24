@@ -5,6 +5,7 @@ import megatronix.soumya.Megatronix_portal.MRD.Repo.MrdRepo;
 import megatronix.soumya.Megatronix_portal.MRD.Service.MrdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.concurrent.CompletableFuture;
 
 @Controller
+@EnableAsync
 public class MrdController {
     @Autowired
     private MrdService service;
@@ -44,12 +46,15 @@ public class MrdController {
     @Async
     public CompletableFuture<String> register(@ModelAttribute("user") MrdModel member, Model model) {
         try {
-            MrdModel registeredMember = service.registerMember(member);
-            model.addAttribute("uniqueId", registeredMember.getId());
+            CompletableFuture<MrdModel> registeredMember = service.registerMember(member);
+            model.addAttribute("uniqueId", registeredMember.get().getId());
             return CompletableFuture.completedFuture("registration-success");
         } catch (Exception e) {
             // Handle validation errors
+            System.out.println(e);
+            model.addAttribute("errorMessage", "Registration failed. Please check your input.");
             return CompletableFuture.completedFuture("registration");
         }
     }
+
 }
