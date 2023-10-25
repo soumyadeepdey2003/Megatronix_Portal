@@ -49,7 +49,7 @@ public class MrdModel {
     private String phoneNumber;
 
     @Nullable
-    private Long gid= 0L;
+    private Long gid;
 
 
     public Long getId() {

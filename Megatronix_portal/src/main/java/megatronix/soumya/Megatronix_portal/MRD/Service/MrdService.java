@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
 
 @Service
 public class MrdService {
-
+    Long c=1L;
     @Autowired
     private MrdRepo MrdRepository;
 
@@ -19,7 +19,8 @@ public class MrdService {
         if (MrdRepository.existsByEmail(member.getEmail()) || MrdRepository.existsByPhoneNumber(member.getPhoneNumber())) {
             throw new RuntimeException("Email or phone number already exists.");
         }
-        member.setGid(member.getGid()+1);
+        member.setGid(c);
+        c++;
         return CompletableFuture.completedFuture(MrdRepository.save(member));
     }
 
