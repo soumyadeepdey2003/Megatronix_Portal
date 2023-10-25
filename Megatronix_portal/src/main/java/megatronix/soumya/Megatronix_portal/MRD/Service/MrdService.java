@@ -19,7 +19,7 @@ public class MrdService {
         if (MrdRepository.existsByEmail(member.getEmail()) || MrdRepository.existsByPhoneNumber(member.getPhoneNumber())) {
             throw new RuntimeException("Email or phone number already exists.");
         }
-
+        member.setGid(member.getGid()+1);
         return CompletableFuture.completedFuture(MrdRepository.save(member));
     }
 

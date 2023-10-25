@@ -33,9 +33,9 @@ public class MrdController {
 
     @GetMapping("/registration-success")
     @Async
-    public CompletableFuture<String> registrationSuccess(@RequestParam(name = "id") Long userId, Model model) {
+    public CompletableFuture<String> registrationSuccess(@RequestParam(name = "gid") Long userId, Model model) {
         // Fetch the user by ID and display the success page
-        MrdModel user = mrdRepository.findById(userId)
+        MrdModel user = (MrdModel) mrdRepository.findByGid(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
         // Use "user" as the attribute name to match the success page template
         model.addAttribute("user", user);
@@ -47,7 +47,7 @@ public class MrdController {
     public CompletableFuture<String> register(@ModelAttribute("user") MrdModel member, Model model) {
         try {
             CompletableFuture<MrdModel> registeredMember = service.registerMember(member);
-            model.addAttribute("uniqueId", registeredMember.get().getId());
+            model.addAttribute("uniqueId", registeredMember.get().getGid());
             return CompletableFuture.completedFuture("registration-success");
         } catch (Exception e) {
             // Handle validation errors

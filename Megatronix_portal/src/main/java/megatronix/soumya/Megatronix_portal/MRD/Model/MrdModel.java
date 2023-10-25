@@ -1,5 +1,6 @@
 package megatronix.soumya.Megatronix_portal.MRD.Model;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.NaturalId;
@@ -11,7 +12,7 @@ import org.springframework.scheduling.annotation.Async;
 @NoArgsConstructor
 @Async
 public class MrdModel {
-    public MrdModel(String name,String college,String year,String department,String roll,String email,String phoneNumber){
+    public MrdModel(String name, String college, String year, String department, String roll, String email, String phoneNumber, Long gid){
         this.name=name;
         this.college=college;
         this.year=year;
@@ -19,6 +20,7 @@ public class MrdModel {
         this.roll=roll;
         this.email=email;
         this.phoneNumber=phoneNumber;
+        this.gid = gid;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,6 +48,9 @@ public class MrdModel {
     @Column(nullable = false)
     private String phoneNumber;
 
+    @Nullable
+    private Long gid= 0L;
+
 
     public Long getId() {
         return id;
@@ -72,7 +77,9 @@ public class MrdModel {
         return phoneNumber;
     }
 
-
+    public Long getGid() {
+        return gid;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -104,5 +111,9 @@ public class MrdModel {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public void setGid(Long gid) {
+        this.gid = gid;
     }
 }
