@@ -11,5 +11,5 @@ public interface MrdRepo extends CrudRepository<MrdModel, Long> {
     boolean existsByEmail(String email);
     boolean existsByPhoneNumber(String phoneNumber);
 
-    Optional<Object> findByGid(Long userId);
+
 }

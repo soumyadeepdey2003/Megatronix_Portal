@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.Async;
 @NoArgsConstructor
 @Async
 public class MrdModel {
-    public MrdModel(String name, String college, String year, String department, String roll, String email, String phoneNumber, Long gid){
+    public MrdModel(String name, String college, String year, String department, String roll, String email, String phoneNumber){
         this.name=name;
         this.college=college;
         this.year=year;
@@ -20,7 +20,7 @@ public class MrdModel {
         this.roll=roll;
         this.email=email;
         this.phoneNumber=phoneNumber;
-        this.gid = gid;
+
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,8 +48,7 @@ public class MrdModel {
     @Column(nullable = false)
     private String phoneNumber;
 
-    @Nullable
-    private Long gid;
+
 
 
     public Long getId() {
@@ -77,9 +76,7 @@ public class MrdModel {
         return phoneNumber;
     }
 
-    public Long getGid() {
-        return gid;
-    }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -113,7 +110,5 @@ public class MrdModel {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setGid(Long gid) {
-        this.gid = gid;
-    }
+
 }

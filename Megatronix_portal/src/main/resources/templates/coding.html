@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Coding RD Form</h1>
-<form action="@{/rd/coding}" method="post" th:object="${codingRd}">
+<form action="@{/rd/coding}" method="post" th:object="${Rduser}">
     <label for="teamname">Team Name:</label>
     <input type="text" id="teamname" name="teamname" th:field="*{teamname}">
     <br><br>

@@ -12,7 +12,7 @@ public class RdService {
             // Your asynchronous processing for the selected domain goes here
 
             // Construct and return the appropriate redirection path
-            String redirectionPath = "redirect:/rd/" + selectedDomain;
+            String redirectionPath = "redirect:/rd/" + selectedDomain.toString();
             return CompletableFuture.completedFuture(redirectionPath);
         }
 

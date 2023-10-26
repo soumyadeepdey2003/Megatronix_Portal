@@ -8,10 +8,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,6 +17,8 @@ public class RdController {
 
     @Autowired
     private RdService rdService;
+
+
     @GetMapping("/rd")
     @Async
     public CompletableFuture<String> showForm(Model model) {
@@ -29,7 +28,38 @@ public class RdController {
     }
 
 
-//    @PostMapping("/rd")
+
+    @GetMapping("/rd/{selectedDomain}")
+    @Async
+    public CompletableFuture<String> showResult(@PathVariable String selectedDomain, Model model) {
+
+        if (selectedDomain.equals("coding")) {
+            model.addAttribute("Rduser", new CodingModel());
+        } else if (selectedDomain.equals("robotics")) {
+            model.addAttribute("Rduser", new RoboticsModel());
+        } else if (selectedDomain.equals("civil")) {
+            model.addAttribute("Rduser", new CivilModel());
+        } else if (selectedDomain.equals("electrical")) {
+            model.addAttribute("Rduser", new ElectrialModel());
+        } else if (selectedDomain.equals("gaming")) {
+            model.addAttribute("Rduser", new GamingModel());
+        } else if (selectedDomain.equals("general")) {
+            model.addAttribute("Rduser", new GeneralModel());
+        }
+
+
+        model.addAttribute("selectedDomain", selectedDomain);
+
+
+        return CompletableFuture.completedFuture(selectedDomain);
+    }
+
+
+
+
+
+
+    //    @PostMapping("/rd")
 //    @Async
 //    public CompletableFuture<String> submitForm(@ModelAttribute("rdmain") Rdmain rdmain, RedirectAttributes redirectAttributes) {
 //        String selectedDomain = rdmain.getSelectedDomain();
@@ -54,51 +84,26 @@ public class RdController {
 //    }
 
 
-    @PostMapping("/rd")
-    @Async
-    public CompletableFuture<String> submitForm(@ModelAttribute("rdmain") Rdmain rdmain, Model model, RedirectAttributes redirectAttributes) {
-        String selectedDomain = rdmain.getSelectedDomain();
-
-        // Use the selected domain to construct the redirect path
-        redirectAttributes.addAttribute("selectedDomain", selectedDomain);
-
-        // Add the codingRd attribute to the model
-        model.addAttribute("codingRd", new CodingModel());
-        model.addAttribute("roboticsRd", new RoboticsModel());
-        model.addAttribute("civilRd", new CivilModel());
-        model.addAttribute("electricalRd", new ElectrialModel());
-        model.addAttribute("gamingRd", new GamingModel());
-        model.addAttribute("generalRd", new GeneralModel());
-
-        return rdService.handleSelectedDomain(selectedDomain);
-    }
-
-
+//    @PostMapping("/rd")
+//    @Async
+//    public CompletableFuture<String> submitForm(@ModelAttribute("rdmain") Rdmain rdmain, Model model, RedirectAttributes redirectAttributes) {
+//        String selectedDomain = rdmain.getSelectedDomain();
+//
+//        // Use the selected domain to construct the redirect path
+//        redirectAttributes.addAttribute("selectedDomain", selectedDomain);
+//
+//        // Add the codingRd attribute to the model
+//        model.addAttribute("codingRd", new CodingModel());
+//        model.addAttribute("roboticsRd", new RoboticsModel());
+//        model.addAttribute("civilRd", new CivilModel());
+//        model.addAttribute("electricalRd", new ElectrialModel());
+//        model.addAttribute("gamingRd", new GamingModel());
+//        model.addAttribute("generalRd", new GeneralModel());
+//
+//        return rdService.handleSelectedDomain(selectedDomain);
+//    }
 
 
-    @GetMapping("/rd/{selectedDomain}")
-    @Async
-    public CompletableFuture<String> showResult(@PathVariable String selectedDomain, Model model) {
 
-        if (selectedDomain.equals("coding")) {
-            model.addAttribute("codingRd", new CodingModel());
-        } else if (selectedDomain.equals("robotics")) {
-            model.addAttribute("roboticsRd", new RoboticsModel());
-        } else if (selectedDomain.equals("civil")) {
-            model.addAttribute("civilRd", new CivilModel());
-        } else if (selectedDomain.equals("electrical")) {
-            model.addAttribute("electricalRd", new ElectrialModel());
-        } else if (selectedDomain.equals("gaming")) {
-            model.addAttribute("gamingRd", new GamingModel());
-        } else if (selectedDomain.equals("general")) {
-            model.addAttribute("generalRd", new GeneralModel());
-        }
-
-
-        model.addAttribute("selectedDomain", selectedDomain);
-
-
-        return CompletableFuture.completedFuture(selectedDomain);
-    }
 
 }
