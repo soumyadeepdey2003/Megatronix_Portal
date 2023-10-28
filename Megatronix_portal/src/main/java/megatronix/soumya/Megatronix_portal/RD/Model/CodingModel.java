@@ -19,7 +19,7 @@ public class CodingModel {
     private Long id;
 
     private String teamname;
-    @Column(name = "selectedcodingevent")
+    @Column(name = "selectedcodingevent" , nullable = false)
     private  String selectedcodingevent;
     private Long gid1;
     @Column(nullable = true)

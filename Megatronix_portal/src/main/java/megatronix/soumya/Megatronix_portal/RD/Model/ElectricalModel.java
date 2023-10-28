@@ -4,11 +4,11 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "ElectrialRd")
+@Table(name = "ElectricalRd")
 @NoArgsConstructor
-public class ElectrialModel {
-    public ElectrialModel(String selectedelectrialevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
-        this.selectedelectrialevent=selectedelectrialevent;
+public class ElectricalModel {
+    public ElectricalModel(String selectedelectricalevent, Long gid1, Long gid2, Long gid3, Long gid4, Long gid5, String number1, String number2){
+        this.selectedelectricalevent =selectedelectricalevent;
         this.gid1=gid1;
         this.gid2=gid2;
         this.gid3=gid3;
@@ -22,7 +22,7 @@ public class ElectrialModel {
     private Long id;
 
 
-    private  String selectedelectrialevent;
+    private  String selectedelectricalevent;
     private Long gid1;
     private Long gid2;
     @Column(nullable = true)
@@ -46,12 +46,12 @@ public class ElectrialModel {
     }
 
 
-    public String getSelectedelectrialevent() {
-        return selectedelectrialevent;
+    public String getSelectedelectricalevent() {
+        return selectedelectricalevent;
     }
 
-    public void setSelectedelectrialevent(String selectedelectrialevent) {
-        this.selectedelectrialevent = selectedelectrialevent;
+    public void setSelectedelectricalevent(String selectedelectricalevent) {
+        this.selectedelectricalevent = selectedelectricalevent;
     }
 
     public Long getGid1() {

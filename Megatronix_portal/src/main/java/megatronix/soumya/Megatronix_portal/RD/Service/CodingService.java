@@ -32,12 +32,14 @@ public class CodingService {
     }
     @Async
     public CompletableFuture<CodingModel> CodingRd(CodingModel member) {
-        if(member.getSelectedcodingevent().equals("debug"))
-            return (CodingOnSportRd( member));
-        else
-            return (CodingMainRd(member));
-
+        if (member.getSelectedcodingevent() == null) {
+            throw new RuntimeException("selectedcodingevent is null.");
+        }
+        if ("debug".equals(member.getSelectedcodingevent())) {
+            return CodingOnSportRd(member);
+        } else {
+            return CodingMainRd(member);
+        }
     }
-
 
 }

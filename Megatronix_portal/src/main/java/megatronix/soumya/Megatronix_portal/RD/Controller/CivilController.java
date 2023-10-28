@@ -6,10 +6,7 @@ import megatronix.soumya.Megatronix_portal.RD.Service.CivilService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -25,10 +22,10 @@ public class CivilController {
 
     @PostMapping("/rd/civil")
     @Async
-    public CompletableFuture<String> register(@ModelAttribute("Rduser") CivilModel member, Model model) {
+    public CompletableFuture<String> register(@RequestBody CivilModel member, Model model) {
         try {
             CompletableFuture<CivilModel> registeredMember = service.CivilMainRd(member);
-            model.addAttribute("uniqueId", registeredMember.get().getId());
+            model.addAttribute("Rduser", registeredMember.get().getId());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors
@@ -36,7 +33,7 @@ public class CivilController {
         }
     }
 
-    @GetMapping("/rd_success")
+    @GetMapping("/civilrd/rd_success")
     @Async
     public CompletableFuture<String> rdSuccess(@RequestParam(name = "id") Long userId, Model model) {
         // Fetch the user by ID and display the success page

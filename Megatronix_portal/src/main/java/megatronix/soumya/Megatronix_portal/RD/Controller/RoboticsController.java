@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -27,10 +24,10 @@ public class RoboticsController {
 
     @PostMapping("/rd/robotics")
     @Async
-    public CompletableFuture<String> register(@ModelAttribute("Rduser") RoboticsModel member, Model model) {
+    public CompletableFuture<String> register(@RequestBody RoboticsModel member, Model model) {
         try {
             CompletableFuture<RoboticsModel> registeredMember = service.RoboticsRd(member);
-            model.addAttribute("uniqueId", registeredMember.get().getId());
+            model.addAttribute("Rduser", registeredMember.get().getId());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors
@@ -38,7 +35,7 @@ public class RoboticsController {
         }
     }
 
-    @GetMapping("/rd/rd_success")
+    @GetMapping("/roboticsrd/rd_success")
     @Async
     public CompletableFuture<String> rdSuccess(@RequestParam(name = "id") Long userId, Model model) {
         // Fetch the user by ID and display the success page

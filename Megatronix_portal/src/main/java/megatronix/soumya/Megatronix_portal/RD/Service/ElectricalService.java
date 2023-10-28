@@ -1,7 +1,7 @@
 package megatronix.soumya.Megatronix_portal.RD.Service;
 
-import megatronix.soumya.Megatronix_portal.RD.Model.ElectrialModel;
-import megatronix.soumya.Megatronix_portal.RD.Repo.ElectrialRepo;
+import megatronix.soumya.Megatronix_portal.RD.Model.ElectricalModel;
+import megatronix.soumya.Megatronix_portal.RD.Repo.ElectricalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -12,34 +12,34 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class ElectricalService {
     @Autowired
-    private ElectrialRepo electrial;
+    private ElectricalRepo electrical;
 
     @Async
-    public CompletableFuture<ElectrialModel> ElectrialMainRd(ElectrialModel member) {
-        List<ElectrialModel> list =electrial.findBySelectedelectrialevent(member.getSelectedelectrialevent());
-        for(ElectrialModel i : list) {
+    public CompletableFuture<ElectricalModel> ElectricalMainRd(ElectricalModel member) {
+        List<ElectricalModel> list =electrical.findBySelectedelectricalevent(member.getSelectedelectricalevent());
+        for(ElectricalModel i : list) {
             if (member.getGid1().equals(i.getGid1())||
                     member.getGid2().equals(i.getGid2()) ||
-                    (member.getGid3().equals(i.getGid3()) && electrial.existsByGid3IsNull()) ||
-                    (member.getGid4().equals(i.getGid4()) && electrial.existsByGid4IsNull()) ||
-                    (member.getGid5().equals(i.getGid5()) && electrial.existsByGid5IsNull()) )
+                    (member.getGid3().equals(i.getGid3()) && electrical.existsByGid3IsNull()) ||
+                    (member.getGid4().equals(i.getGid4()) && electrical.existsByGid4IsNull()) ||
+                    (member.getGid5().equals(i.getGid5()) && electrical.existsByGid5IsNull()) )
             {
 
                 throw new RuntimeException("gid is already exists.");
             }
         }
-        return CompletableFuture.completedFuture(electrial.save(member));
+        return CompletableFuture.completedFuture(electrical.save(member));
     }
     @Async
-    public CompletableFuture<ElectrialModel> ElectrialOnSportRd(ElectrialModel member) {
-        return CompletableFuture.completedFuture(electrial.save(member));
+    public CompletableFuture<ElectricalModel> ElectricalOnSportRd(ElectricalModel member) {
+        return CompletableFuture.completedFuture(electrical.save(member));
     }
     @Async
-    public CompletableFuture<ElectrialModel> ElectrialRd(ElectrialModel member) {
-        if(member.getSelectedelectrialevent().equals("Event2"))
-            return ElectrialOnSportRd( member);
+    public CompletableFuture<ElectricalModel> ElectricalRd(ElectricalModel member) {
+        if(member.getSelectedelectricalevent().equals("Event2"))
+            return ElectricalOnSportRd( member);
         else
-            return ElectrialMainRd(member);
+            return ElectricalMainRd(member);
 
     }
 

@@ -40,7 +40,7 @@ public class RdController {
         } else if (selectedDomain.equals("civil")) {
             model.addAttribute("Rduser", new CivilModel());
         } else if (selectedDomain.equals("electrical")) {
-            model.addAttribute("Rduser", new ElectrialModel());
+            model.addAttribute("Rduser", new ElectricalModel());
         } else if (selectedDomain.equals("gaming")) {
             model.addAttribute("Rduser", new GamingModel());
         } else if (selectedDomain.equals("general")) {

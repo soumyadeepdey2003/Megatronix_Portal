@@ -7,10 +7,7 @@ import megatronix.soumya.Megatronix_portal.RD.Service.GeneralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -25,10 +22,10 @@ public class GeneralController {
 
     @PostMapping("/rd/general")
     @Async
-    public CompletableFuture<String> register(@ModelAttribute("Rduser") GeneralModel member, Model model) {
+    public CompletableFuture<String> register(@RequestBody GeneralModel member, Model model) {
         try {
             CompletableFuture<GeneralModel> registeredMember = service.GeneralOnSportRd(member);
-            model.addAttribute("uniqueId", registeredMember.get().getId());
+            model.addAttribute("Rduser", registeredMember.get().getId());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors
