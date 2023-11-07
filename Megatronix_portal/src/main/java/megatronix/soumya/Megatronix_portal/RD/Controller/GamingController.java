@@ -36,7 +36,7 @@ public class GamingController {
         }
     }
 
-    @GetMapping("/generalrd/rd_success")
+    @GetMapping("/rd/rd_success")
     @Async
     public CompletableFuture<String> rdSuccess(@RequestParam(name = "id") Long userId, Model model) {
         // Fetch the user by ID and display the success page

@@ -25,7 +25,7 @@ public class CodingController {
     @PostMapping("/rd/coding")
     @Async
     public CompletableFuture<String> register(@RequestBody CodingModel member, Model model) {
-
+        System.out.println("hi");
         try {
             CompletableFuture<CodingModel> registeredMember = service.CodingRd(member);
             model.addAttribute("Rduser", registeredMember.get());

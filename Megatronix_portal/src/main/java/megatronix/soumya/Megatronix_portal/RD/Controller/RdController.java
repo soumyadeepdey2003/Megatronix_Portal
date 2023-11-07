@@ -29,7 +29,7 @@ public class RdController {
 
 
 
-    @GetMapping("/rd/{selectedDomain}")
+    @GetMapping("/{selectedDomain}")
     @Async
     public CompletableFuture<String> showResult(@PathVariable String selectedDomain, Model model) {
 

@@ -19,7 +19,10 @@ public class CodingService {
 
         List<CodingModel> list =coding.findBySelectedcodingevent(member.getSelectedcodingevent());
             for(CodingModel i : list) {
-                if (member.getGid1().equals(i.getGid1())|| (member.getGid2().equals(i.getGid2()) && coding.existsByGid2IsNull())) {
+                if (member.getGid1().equals(i.getGid1())||
+                        member.getGid1().equals(i.getGid2()) ||
+                        (member.getGid2().equals(i.getGid2()) && !coding.existsByGid2IsNull())||
+                        (member.getGid2().equals(i.getGid1()) && !coding.existsByGid2IsNull())) {
                     throw new RuntimeException("gid is already exists.");
                 }
             }

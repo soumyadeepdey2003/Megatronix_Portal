@@ -33,7 +33,7 @@ public class GeneralController {
         }
     }
 
-    @GetMapping("/rd/rd_success")
+    @GetMapping("/generalrd/rd_success")
     @Async
     public CompletableFuture<String> rdSuccess(@RequestParam(name = "id") Long userId, Model model) {
         // Fetch the user by ID and display the success page

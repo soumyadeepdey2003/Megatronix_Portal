@@ -18,11 +18,38 @@ public class RoboticsService {
     public CompletableFuture<RoboticsModel> RoboticsMainRd(RoboticsModel member) {
         List<RoboticsModel> list =robotics.findBySelectedroboticsevent(member.getselectedroboticsevent());
         for(RoboticsModel i : list) {
-            if (member.getGid1().equals(i.getGid1())||
+            if (member.getGid1().equals(i.getGid1())  ||
+                    member.getGid1().equals(i.getGid2())||
+                    member.getGid1().equals(i.getGid3()) ||
+                    member.getGid1().equals(i.getGid4())||
+                    member.getGid1().equals(i.getGid5())||
+
+                    member.getGid2().equals(i.getGid1())||
                     member.getGid2().equals(i.getGid2()) ||
-                    (member.getGid3().equals(i.getGid3()) && robotics.existsByGid3IsNull()) ||
-                    (member.getGid4().equals(i.getGid4()) && robotics.existsByGid4IsNull()) ||
-                    (member.getGid5().equals(i.getGid5()) && robotics.existsByGid5IsNull()) )
+                    member.getGid2().equals(i.getGid3())||
+                    member.getGid2().equals(i.getGid4()) ||
+                    member.getGid2().equals(i.getGid5())||
+
+                    ((member.getGid3().equals(i.getGid3())||
+                            member.getGid3().equals(i.getGid1() ) ||
+                            member.getGid3().equals(i.getGid2())  ||
+                            member.getGid3().equals(i.getGid4()) ||
+                            member.getGid3().equals(i.getGid5())
+                    ) && !robotics.existsByGid3IsNull()) ||
+
+                    ((member.getGid4().equals(i.getGid3())||
+                            member.getGid4().equals(i.getGid1() ) ||
+                            member.getGid4().equals(i.getGid2())  ||
+                            member.getGid4().equals(i.getGid4()) ||
+                            member.getGid4().equals(i.getGid5())
+                    )&& !robotics.existsByGid4IsNull()) ||
+
+                    ((member.getGid5().equals(i.getGid3())||
+                            member.getGid5().equals(i.getGid1() ) ||
+                            member.getGid5().equals(i.getGid2())  ||
+                            member.getGid5().equals(i.getGid4()) ||
+                            member.getGid5().equals(i.getGid5())
+                    )&& !robotics.existsByGid5IsNull()) )
             {
 
                 throw new RuntimeException("gid is already exists.");

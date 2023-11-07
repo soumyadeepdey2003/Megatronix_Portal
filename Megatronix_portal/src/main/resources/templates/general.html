@@ -5,46 +5,57 @@
 </head>
 <body>
 <h1>General RD Form</h1>
-<form action="@{/rd/general}" method="post" th:object="${Rduser}">
+<form th:action="@{/rd/general}" method="post" th:object="${Rduser}">
 
+    <div>
+        <label for="selectedgeneralevent">Select Civil Event:</label>
+        <select id="selectedgeneralevent" name="selectedgeneralevent" th:field="*{selectedgeneralevent}">
+            <option value="Event1">Web</option>
+            <option value="Event2">CP</option>
+            <option value="Event3">Debug</option>
+            <option value="Event4">Debug</option>
+        </select>
+    </div>
 
-    <label for="selectedgeneralevent">Select Civil Event:</label>
-    <select id="selectedgeneralevent" name="selectedgeneralevent" th:field="*{selectedgeneralevent}">
-        <option value="Event1">Web</option>
-        <option value="Event2">CP</option>
-        <option value="Event3">Debug</option>
-        <option value="Event4">Debug</option>
-    </select>
-    <br><br>
+    <div>
+        <label for="gid1">GID1:</label>
+        <input type="number" id="gid1" name="gid1" th:field="*{gid1}">
+    </div>
 
-    <label for="gid1">GID1:</label>
-    <input type="number" id="gid1" name="gid1" th:field="*{gid1}">
-    <br><br>
+    <div>
+        <label for="gid2">GID2:</label>
+        <input type="number" id="gid2" name="gid2" th:field="*{gid2}">
+    </div>
 
-    <label for="gid2">GID2:</label>
-    <input type="number" id="gid2" name="gid2" th:field="*{gid2}">
-    <br><br>
+    <div>
+        <label for="gid3">GID3:</label>
+        <input type="number" id="gid3" name="gid3" th:field="*{gid3}">
+    </div>
 
-    <label for="gid3">GID3:</label>
-    <input type="number" id="gid3" name="gid3" th:field="*{gid3}">
-    <br><br>
+    <div>
+        <label for="gid4">GID4:</label>
+        <input type="number" id="gid4" name="gid4" th:field="*{gid4}">
+    </div>
 
-    <label for="gid4">GID4:</label>
-    <input type="number" id="gid4" name="gid4" th:field="*{gid4}">
-    <br><br>
+    <div>
+        <label for="gid5">GID5:</label>
+        <input type="number" id="gid5" name="gid5" th:field="*{gid5}">
+    </div>
 
-    <label for="gid5">GID5:</label>
-    <input type="number" id="gid5" name="gid5" th:field="*{gid5}">
-    <br><br>
+    <div>
+        <label for="number1">Phone Number:</label>
+        <input type="text" id="number1" name="number1" th:field="*{number1}">
+    </div>
 
-    <label for="number1">Phone Number:</label>
-    <input type="text" id="number1" name="number1" th:field="*{number1}">
+    <div>
+        <label for="number2">Phone Number 2:</label>
+        <input type="text" id="number2" name="number2" th:field="*{number2}">
+    </div>
 
-    <br><br>
-    <label for="number2">Phone Number 2:</label>
-    <input type="text" id="number2" name="number2" th:field="*{number2}">
+    <div>
+        <input type="submit" value="Submit">
+    </div>
 
-    <input type="submit" value="Submit">
 </form>
 </body>
 </html>
