@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.CompletableFuture;
 
 @Controller
+@RequestMapping("/rd")
 public class CodingController {
 
     @Autowired
@@ -20,30 +21,27 @@ public class CodingController {
     @Autowired
     private CodingRepo repo;
 
-
-
-    @PostMapping("/rd/coding")
+    @PostMapping("/coding")
     @Async
     public CompletableFuture<String> register(@RequestBody CodingModel member, Model model) {
         System.out.println("hi");
         try {
             CompletableFuture<CodingModel> registeredMember = service.CodingRd(member);
-            model.addAttribute("Rduser", registeredMember.get());
-            // Display the "rd_success" template directly
+
+            registeredMember.thenAcceptAsync(rdUser -> {
+                model.addAttribute("Rduser", rdUser);
+            }).join(); // Wait for the CompletableFuture to complete before rendering the template
+
+            // Display the "rd-success" template directly
             return CompletableFuture.completedFuture("rd-success");
-
         } catch (Exception e) {
-            // Log the exception
-
-            model.addAttribute(e.getMessage(), "Registration failed. Please check your input.");
+            // Log the exception (consider using a proper logging framework)
+            model.addAttribute("error", "Registration failed. Please check your input.");
             return CompletableFuture.completedFuture("coding");
         }
     }
 
-
-
-
-    @GetMapping("/codingrd/rd_success")
+    @GetMapping("/coding")
     @Async
     public CompletableFuture<String> rdSuccess(@RequestParam(name = "id") Long userId, Model model) {
         // Fetch the user by ID and display the success page
@@ -53,7 +51,4 @@ public class CodingController {
         model.addAttribute("Rduser", Rduser);
         return CompletableFuture.completedFuture("rd-success");
     }
-
-
-
 }
