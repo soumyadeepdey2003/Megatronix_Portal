@@ -1,7 +1,9 @@
 package megatronix.soumya.Megatronix_portal.MRD.Model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.NaturalId;
 import org.springframework.scheduling.annotation.Async;
@@ -38,14 +40,17 @@ public class MrdModel {
     @Column(nullable = false)
     private String department;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String roll;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email format")
     @NaturalId(mutable = true)
     private String email;
 
-    @Column(nullable = false)
+    @NotBlank(message = "Phone number is required")
+    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Invalid Indian phone number")
     private String phoneNumber;
 
 
@@ -109,6 +114,8 @@ public class MrdModel {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+
 
 
 }
