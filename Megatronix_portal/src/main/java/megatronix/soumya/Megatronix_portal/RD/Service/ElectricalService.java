@@ -1,5 +1,7 @@
 package megatronix.soumya.Megatronix_portal.RD.Service;
 
+import megatronix.soumya.Megatronix_portal.MRD.Model.MrdModel;
+import megatronix.soumya.Megatronix_portal.MRD.Repo.MrdRepo;
 import megatronix.soumya.Megatronix_portal.RD.Model.ElectricalModel;
 import megatronix.soumya.Megatronix_portal.RD.Repo.ElectricalRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,15 +9,19 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 @Service
 public class ElectricalService {
     @Autowired
     private ElectricalRepo electrical;
-
+    @Autowired
+    private MrdRepo repo;
     @Async
     public CompletableFuture<ElectricalModel> ElectricalMainRd(ElectricalModel member) {
+        Optional<MrdModel> model=repo.findById(member.getId());
+        if ( !model.get().equals(null)) {
         List<ElectricalModel> list =electrical.findBySelectedelectricalevent(member.getSelectedelectricalevent());
         for(ElectricalModel i : list) {
             if (member.getGid1().equals(i.getGid1())  ||
@@ -56,10 +62,18 @@ public class ElectricalService {
             }
         }
         return CompletableFuture.completedFuture(electrical.save(member));
+        }
+
+        throw new RuntimeException("gid is not present");
     }
     @Async
     public CompletableFuture<ElectricalModel> ElectricalOnSportRd(ElectricalModel member) {
+        Optional<MrdModel> model=repo.findById(member.getId());
+        if ( !model.get().equals(null)) {
         return CompletableFuture.completedFuture(electrical.save(member));
+    }
+
+        throw new RuntimeException("gid is not present");
     }
     @Async
     public CompletableFuture<ElectricalModel> ElectricalRd(ElectricalModel member) {

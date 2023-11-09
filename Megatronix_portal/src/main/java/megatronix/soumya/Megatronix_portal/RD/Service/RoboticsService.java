@@ -1,5 +1,7 @@
 package megatronix.soumya.Megatronix_portal.RD.Service;
 
+import megatronix.soumya.Megatronix_portal.MRD.Model.MrdModel;
+import megatronix.soumya.Megatronix_portal.MRD.Repo.MrdRepo;
 import megatronix.soumya.Megatronix_portal.RD.Model.RoboticsModel;
 import megatronix.soumya.Megatronix_portal.RD.Repo.RoboticsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,15 +9,19 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 @Service
 public class RoboticsService {
     @Autowired
     private RoboticsRepo robotics;
-
+    @Autowired
+    private MrdRepo repo;
     @Async
     public CompletableFuture<RoboticsModel> RoboticsMainRd(RoboticsModel member) {
+        Optional<MrdModel> model=repo.findById(member.getId());
+        if ( !model.get().equals(null)) {
         List<RoboticsModel> list =robotics.findBySelectedroboticsevent(member.getselectedroboticsevent());
         for(RoboticsModel i : list) {
             if (member.getGid1().equals(i.getGid1())  ||
@@ -56,10 +62,19 @@ public class RoboticsService {
             }
         }
         return CompletableFuture.completedFuture(robotics.save(member));
+        }
+
+        throw new RuntimeException("gid is not present");
     }
     @Async
     public CompletableFuture<RoboticsModel> RoboticsOnSportRd(RoboticsModel member) {
+
+            Optional<MrdModel> model=repo.findById(member.getId());
+            if ( !model.get().equals(null)) {
         return CompletableFuture.completedFuture(robotics.save(member));
+            }
+
+        throw new RuntimeException("gid is not present");
     }
     @Async
     public CompletableFuture<RoboticsModel> RoboticsRd(RoboticsModel member) {
