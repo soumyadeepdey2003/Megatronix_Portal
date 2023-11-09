@@ -6,7 +6,8 @@
       <item index="2" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.PostMapping" />
       <item index="3" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.PutMapping" />
       <item index="4" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.DeleteMapping" />
-      <item index="5" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.RequestMapping" /><item index="6" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Value"></item>
+      <item index="5" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.RequestMapping" />
+      <item index="6" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Value" />
     </list>
     <writeAnnotations>
       <writeAnnotation name="org.springframework.beans.factory.annotation.Autowired" />

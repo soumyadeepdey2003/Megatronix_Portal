@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21607fb6-a9c6-4635-bb75-db0afdc03f16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/CivilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/CivilController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/CodingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/CodingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/GamingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/GamingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/GeneralController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/RdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/RdController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/RoboticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/RoboticsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/electricalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Controller/electricalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/civil.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/civil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/coding.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/coding.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/electrical.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/electrical.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/gaming.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/gaming.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/general.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/robotics.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/robotics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/rd-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/templates/rd-success.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
