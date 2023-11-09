@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Robotics RD Form</h1>
-<form th:action="@{/rd/robotics}" method="post" th:object="${Rduser}">
+<form th:action="@{/rd/robotics}" method="post" th:object="${robotics}">
     <div>
         <label for="teamname">Team Name:</label>
         <input type="text" id="teamname" name="teamname" th:field="*{teamname}">

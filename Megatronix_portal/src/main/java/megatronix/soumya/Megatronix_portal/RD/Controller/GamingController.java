@@ -23,12 +23,12 @@ public class GamingController {
 
 
 
-    @PostMapping("/rd/gaming")
+    @RequestMapping(value="/rd/gaming", method = RequestMethod.POST)
     @Async
-    public CompletableFuture<String> register(@RequestBody GamingModel member, Model model) {
+    public CompletableFuture<String> register(@ModelAttribute("gaming") GamingModel member, Model model) {
         try {
             CompletableFuture<GamingModel> registeredMember = service.GamingOnSportRd(member);
-            model.addAttribute("Rduser", registeredMember.get().getId());
+            model.addAttribute("Rduser", registeredMember.get());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors
@@ -36,7 +36,7 @@ public class GamingController {
         }
     }
 
-    @GetMapping("/rd/rd_success")
+    @GetMapping("/gaming")
     @Async
     public CompletableFuture<String> rdSuccess(@RequestParam(name = "id") Long userId, Model model) {
         // Fetch the user by ID and display the success page

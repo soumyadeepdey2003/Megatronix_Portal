@@ -22,12 +22,12 @@ public class RoboticsController {
 
 
 
-    @PostMapping("/rd/robotics")
+    @RequestMapping(value="/rd/robotics", method = RequestMethod.POST)
     @Async
-    public CompletableFuture<String> register(@RequestBody RoboticsModel member, Model model) {
+    public CompletableFuture<String> register(@ModelAttribute("robotics") RoboticsModel member, Model model) {
         try {
             CompletableFuture<RoboticsModel> registeredMember = service.RoboticsRd(member);
-            model.addAttribute("Rduser", registeredMember.get().getId());
+            model.addAttribute("Rduser", registeredMember.get());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Handle validation errors
@@ -35,7 +35,7 @@ public class RoboticsController {
         }
     }
 
-    @GetMapping("/roboticsrd/rd_success")
+    @GetMapping("/robotics")
     @Async
     public CompletableFuture<String> rdSuccess(@RequestParam(name = "id") Long userId, Model model) {
         // Fetch the user by ID and display the success page

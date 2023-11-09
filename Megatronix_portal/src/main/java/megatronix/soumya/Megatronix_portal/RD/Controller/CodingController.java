@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.CompletableFuture;
 
 @Controller
-@RequestMapping("/rd")
+
 public class CodingController {
 
     @Autowired
@@ -21,17 +21,15 @@ public class CodingController {
     @Autowired
     private CodingRepo repo;
 
-    @PostMapping("/coding")
-    @Async
-    public CompletableFuture<String> register(@RequestBody CodingModel member, Model model) {
+//    @PostMapping("/rd/coding")
+  @Async
+    @RequestMapping(value="/rd/coding", method = RequestMethod.POST)
+    public CompletableFuture<String> register(@ModelAttribute("coding") CodingModel member, Model model) {
         System.out.println("hi");
         try {
             CompletableFuture<CodingModel> registeredMember = service.CodingRd(member);
 
-            registeredMember.thenAcceptAsync(rdUser -> {
-                model.addAttribute("Rduser", rdUser);
-            }).join(); // Wait for the CompletableFuture to complete before rendering the template
-
+            model.addAttribute("Rduser", registeredMember.get());
             // Display the "rd-success" template directly
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {

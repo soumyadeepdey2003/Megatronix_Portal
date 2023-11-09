@@ -5,10 +5,10 @@
 </head>
 <body>
 <h1>General RD Form</h1>
-<form th:action="@{/rd/general}" method="post" th:object="${Rduser}">
+<form th:action="@{/rd/general}" method="post" th:object="${general}">
 
     <div>
-        <label for="selectedgeneralevent">Select Civil Event:</label>
+        <label for="selectedgeneralevent">Select General Event:</label>
         <select id="selectedgeneralevent" name="selectedgeneralevent" th:field="*{selectedgeneralevent}">
             <option value="Event1">Web</option>
             <option value="Event2">CP</option>

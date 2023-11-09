@@ -34,17 +34,17 @@ public class RdController {
     public CompletableFuture<String> showResult(@PathVariable String selectedDomain, Model model) {
 
         if (selectedDomain.equals("coding")) {
-            model.addAttribute("Rduser", new CodingModel());
+            model.addAttribute("coding", new CodingModel());
         } else if (selectedDomain.equals("robotics")) {
-            model.addAttribute("Rduser", new RoboticsModel());
+            model.addAttribute("robotics", new RoboticsModel());
         } else if (selectedDomain.equals("civil")) {
-            model.addAttribute("Rduser", new CivilModel());
+            model.addAttribute("civil", new CivilModel());
         } else if (selectedDomain.equals("electrical")) {
-            model.addAttribute("Rduser", new ElectricalModel());
+            model.addAttribute("electrical", new ElectricalModel());
         } else if (selectedDomain.equals("gaming")) {
-            model.addAttribute("Rduser", new GamingModel());
+            model.addAttribute("gaming", new GamingModel());
         } else if (selectedDomain.equals("general")) {
-            model.addAttribute("Rduser", new GeneralModel());
+            model.addAttribute("general", new GeneralModel());
         }
 
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 <head>
     <title>Coding RD Form</title>
 </head>
 <body>
 <h1>Coding RD Form</h1>
-<form th:action="@{/rd/coding}" method="post" th:object="${Rduser}">
+<form th:action="@{/rd/coding}" method="post" th:object="${coding}">
     <div>
         <label for="teamname">Team Name:</label>
         <input type="text" id="teamname" name="teamname" th:field="*{teamname}">
