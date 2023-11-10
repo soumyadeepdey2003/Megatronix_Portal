@@ -29,8 +29,8 @@ public class GeneralController {
             model.addAttribute("Rduser", registeredMember.get());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
-            // Handle validation errors
-            return CompletableFuture.completedFuture("general");
+            model.addAttribute("errorDetails", e.getMessage());
+            return CompletableFuture.completedFuture("error");
         }
     }
 

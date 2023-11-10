@@ -21,31 +21,36 @@ public class CodingService {
 
     @Async
     public CompletableFuture<CodingModel> CodingMainRd(CodingModel member) {
-        Optional<MrdModel> model=repo.findById(member.getId());
-        if ( !model.get().equals(null)) {
-        List<CodingModel> list =coding.findBySelectedcodingevent(member.getSelectedcodingevent());
-            for(CodingModel i : list) {
-                if (member.getGid1().equals(i.getGid1())||
+        Optional<MrdModel> gid1 = repo.findById(member.getGid1());
+        Optional<MrdModel> gid2 = Optional.ofNullable(member.getGid2()).flatMap(repo::findById);
+
+        if (gid1.isPresent() &&
+            (gid2.isPresent() || member.getGid2() == null)) {
+            List<CodingModel> list = coding.findBySelectedcodingevent(member.getSelectedcodingevent());
+            for (CodingModel i : list) {
+                if (member.getGid1().equals(i.getGid1()) ||
                         member.getGid1().equals(i.getGid2()) ||
-                        (member.getGid2().equals(i.getGid2()) && !coding.existsByGid2IsNull())||
-                        (member.getGid2().equals(i.getGid1()) && !coding.existsByGid2IsNull())) {
-                    throw new RuntimeException("gid is already exists.");
+                        (member.getGid2() != null && member.getGid2().equals(i.getGid2()) && !coding.existsByGid2IsNull()) ||
+                        (member.getGid2() != null && member.getGid2().equals(i.getGid1()) && !coding.existsByGid2IsNull())) {
+                    throw new RuntimeException("gid  already exists.");
                 }
-
             }
+            return CompletableFuture.completedFuture(coding.save(member));
+        }
+        throw new RuntimeException("gid  not present");
+    }
 
-        return CompletableFuture.completedFuture(coding.save(member));
+    @Async
+    public CompletableFuture<CodingModel> CodingOnSportRd(CodingModel member) {
+        Optional<MrdModel> gid1 = repo.findById(member.getGid1());
+        Optional<MrdModel> gid2 = Optional.ofNullable(member.getGid2()).flatMap(repo::findById);
+
+        if (gid1.isPresent() && (gid2.isPresent() || member.getGid2() == null)) {
+            return CompletableFuture.completedFuture(coding.save(member));
         }
         throw new RuntimeException("gid is not present");
     }
-    @Async
-    public CompletableFuture<CodingModel> CodingOnSportRd(CodingModel member) {
-        Optional<MrdModel> model=repo.findById(member.getId());
-        if ( !model.get().equals(null)) {
-          return CompletableFuture.completedFuture(coding.save(member));
-    }
-            throw new RuntimeException("gid is not present");
-    }
+
     @Async
     public CompletableFuture<CodingModel> CodingRd(CodingModel member) {
         if (member.getSelectedcodingevent() == null) {
@@ -57,5 +62,4 @@ public class CodingService {
             return CodingMainRd(member);
         }
     }
-
 }

@@ -32,8 +32,8 @@ public class CivilController {
             model.addAttribute("Rduser", registeredMember.get());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
-            // Handle validation errors
-            return CompletableFuture.completedFuture("civil");
+            model.addAttribute("errorDetails", e.getMessage());
+            return CompletableFuture.completedFuture("error");
         }
     }
 

@@ -34,8 +34,9 @@ public class CodingController {
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
             // Log the exception (consider using a proper logging framework)
-            model.addAttribute("error", "Registration failed. Please check your input.");
-            return CompletableFuture.completedFuture("coding");
+
+            model.addAttribute("errorDetails", e.getMessage());
+            return CompletableFuture.completedFuture("error");
         }
     }
 

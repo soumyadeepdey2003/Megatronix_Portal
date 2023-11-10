@@ -50,10 +50,8 @@ public class MrdController {
             model.addAttribute("uniqueId", registeredMember.get().getId());
             return CompletableFuture.completedFuture("registration-success");
         } catch (Exception e) {
-            // Handle validation errors
-            System.out.println(e);
-            model.addAttribute("errorMessage", "Registration failed. Please check your input.");
-            return CompletableFuture.completedFuture("registration");
+            model.addAttribute("errorDetails", e.getMessage());
+            return CompletableFuture.completedFuture("error");
         }
     }
 

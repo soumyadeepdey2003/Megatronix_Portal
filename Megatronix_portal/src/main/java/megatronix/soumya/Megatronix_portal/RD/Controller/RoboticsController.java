@@ -30,8 +30,8 @@ public class RoboticsController {
             model.addAttribute("Rduser", registeredMember.get());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
-            // Handle validation errors
-            return CompletableFuture.completedFuture("robotics");
+            model.addAttribute("errorDetails", e.getMessage());
+            return CompletableFuture.completedFuture("error");
         }
     }
 

@@ -24,9 +24,17 @@ public class CivilService {
 
     @Async
     public CompletableFuture<CivilModel> CivilMainRd(CivilModel member) {
-        Optional<MrdModel> model=repo.findById(member.getId());
-
-        if ( !model.get().equals(null)) {
+        Optional<MrdModel> gid1 = repo.findById(member.getGid1());
+        Optional<MrdModel> gid2 = repo.findById(member.getGid2());
+        Optional<MrdModel> gid3 = Optional.ofNullable(member.getGid3()).flatMap(repo::findById);
+        Optional<MrdModel> gid4 = Optional.ofNullable(member.getGid4()).flatMap(repo::findById);
+        Optional<MrdModel> gid5 = Optional.ofNullable(member.getGid5()).flatMap(repo::findById);
+        if ( gid1.isPresent() &&
+             gid2.isPresent() &&
+             (gid3.isPresent() || member.getGid3() == null)  &&
+             (gid4.isPresent() || member.getGid4() == null)  &&
+             (gid5.isPresent() || member.getGid5() == null)
+        ) {
             List<CivilModel> list = civil.findBySelectedcivilevent(member.getSelectedcivilevent());
             for (CivilModel i : list) {
                 if (member.getGid1().equals(i.getGid1()) ||
@@ -41,34 +49,32 @@ public class CivilService {
                         member.getGid2().equals(i.getGid4()) ||
                         member.getGid2().equals(i.getGid5()) ||
 
-                        ((member.getGid3().equals(i.getGid3()) ||
-                                member.getGid3().equals(i.getGid1()) ||
-                                member.getGid3().equals(i.getGid2()) ||
-                                member.getGid3().equals(i.getGid4()) ||
-                                member.getGid3().equals(i.getGid5())
-                        ) && !civil.existsByGid3IsNull()) ||
+                        ((member.getGid3() != null && member.getGid3().equals(i.getGid3()) ||
+                          member.getGid3() != null &&member.getGid3().equals(i.getGid1()) ||
+                          member.getGid3() != null &&member.getGid3().equals(i.getGid2()) ||
+                          member.getGid3() != null &&member.getGid3().equals(i.getGid4()) ||
+                          member.getGid3() != null &&member.getGid3().equals(i.getGid5())) ) ||
 
-                        ((member.getGid4().equals(i.getGid3()) ||
-                                member.getGid4().equals(i.getGid1()) ||
-                                member.getGid4().equals(i.getGid2()) ||
-                                member.getGid4().equals(i.getGid4()) ||
-                                member.getGid4().equals(i.getGid5())
-                        ) && !civil.existsByGid4IsNull()) ||
+                        ((member.getGid4() != null && member.getGid4().equals(i.getGid3()) ||
+                          member.getGid4() != null && member.getGid4().equals(i.getGid1()) ||
+                          member.getGid4() != null && member.getGid4().equals(i.getGid2()) ||
+                          member.getGid4() != null && member.getGid4().equals(i.getGid4()) ||
+                          member.getGid4() != null && member.getGid4().equals(i.getGid5()))) ||
 
-                        ((member.getGid5().equals(i.getGid3()) ||
-                                member.getGid5().equals(i.getGid1()) ||
-                                member.getGid5().equals(i.getGid2()) ||
-                                member.getGid5().equals(i.getGid4()) ||
-                                member.getGid5().equals(i.getGid5())
-                        ) && !civil.existsByGid5IsNull())) {
+                        ((member.getGid5() != null && member.getGid5().equals(i.getGid3()) ||
+                          member.getGid5() != null && member.getGid5().equals(i.getGid1()) ||
+                          member.getGid5() != null && member.getGid5().equals(i.getGid2()) ||
+                          member.getGid5() != null && member.getGid5().equals(i.getGid4()) ||
+                          member.getGid5() != null && member.getGid5().equals(i.getGid5())))
+                ) {
 
-                    throw new RuntimeException("gid is already exists.");
+                    throw new RuntimeException("gid  already exists.");
                 }
             }
             return CompletableFuture.completedFuture(civil.save(member));
         }
 
-        throw new RuntimeException("gid is not present");
+        throw new RuntimeException("gid  not present");
     }
 
 }
