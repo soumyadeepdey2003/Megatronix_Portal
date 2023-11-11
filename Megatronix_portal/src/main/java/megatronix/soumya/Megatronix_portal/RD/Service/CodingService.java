@@ -31,7 +31,7 @@ public class CodingService {
                 if (member.getGid1().equals(i.getGid1()) ||
                         member.getGid1().equals(i.getGid2()) ||
                         member.getGid1().equals(member.getGid2())||
-                        (member.getGid2().equals(member.getGid1()) && member.getGid2() !=null)||
+                        (member.getGid2() !=null && member.getGid2().equals(member.getGid1()))||
                         (member.getGid2() != null && member.getGid2().equals(i.getGid2()) ) ||
                         (member.getGid2() != null && member.getGid2().equals(i.getGid1()) )
                 ) {
