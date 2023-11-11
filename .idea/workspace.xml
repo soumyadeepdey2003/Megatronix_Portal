@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="21607fb6-a9c6-4635-bb75-db0afdc03f16" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CivilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CivilService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CodingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CodingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/ElectricalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/ElectricalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/GamingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/GamingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/GeneralService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/GeneralService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/RoboticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/RoboticsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

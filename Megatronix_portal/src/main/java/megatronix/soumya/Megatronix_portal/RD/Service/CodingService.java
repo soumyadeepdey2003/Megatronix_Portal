@@ -38,7 +38,17 @@ public class CodingService {
                     throw new RuntimeException("gid  already exists.");
                 }
             }
-            return CompletableFuture.completedFuture(coding.save(member));
+            if(
+                    member.getGid1().equals(member.getGid2()) ||
+                            (member.getGid2()!=null && member.getGid2().equals(member.getGid1()))
+
+
+            ){
+                throw new RuntimeException("gid  already exists.");
+            }
+            else {
+                return CompletableFuture.completedFuture(coding.save(member));
+            }
         }
         throw new RuntimeException("gid  not present");
     }

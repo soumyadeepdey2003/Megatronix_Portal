@@ -110,7 +110,36 @@ public class ElectricalService {
                 throw new RuntimeException("gid  already exists.");
             }
         }
-        return CompletableFuture.completedFuture(electrical.save(member));
+            if(
+                    (
+                            member.getGid1().equals(member.getGid2())||
+                                    member.getGid1().equals(member.getGid3())||
+                                    member.getGid1().equals(member.getGid4())||
+                                    member.getGid1().equals(member.getGid5())
+                    )||
+                            (
+                                    member.getGid2().equals(member.getGid1())||
+                                            member.getGid2().equals(member.getGid3())||
+                                            member.getGid2().equals(member.getGid4())||
+                                            member.getGid2().equals(member.getGid5())
+                            )||
+                            (
+                                    (member.getGid3() != null &&member.getGid3().equals(member.getGid2()))||
+                                            (member.getGid3() != null &&member.getGid3().equals(member.getGid1()))||
+                                            (member.getGid3() != null &&member.getGid3().equals(member.getGid4()))||
+                                            (member.getGid3() != null &&member.getGid3().equals(member.getGid5()))
+                            )||
+                            (
+                                    (member.getGid4() != null && member.getGid4().equals(member.getGid2()))||
+                                            (member.getGid4() != null && member.getGid4().equals(member.getGid1()))||
+                                            (member.getGid4() != null && member.getGid4().equals(member.getGid3()))||
+                                            (member.getGid4() != null && member.getGid4().equals(member.getGid5()))
+                            )
+            )
+                throw new RuntimeException("GID already exists");
+            else {
+                return CompletableFuture.completedFuture(electrical.save(member));
+            }
         }
 
         throw new RuntimeException("gid  not present");
