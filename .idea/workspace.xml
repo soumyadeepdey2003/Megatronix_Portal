@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21607fb6-a9c6-4635-bb75-db0afdc03f16" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CivilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CivilService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/ElectricalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/ElectricalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/RoboticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/RoboticsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>

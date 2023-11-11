@@ -39,70 +39,75 @@ public class CivilService {
             for (CivilModel i : list) {
                 if (
                         (
-                          member.getGid1().equals(i.getGid1()) ||
-                          member.getGid1().equals(i.getGid2()) ||
-                          member.getGid1().equals(i.getGid3()) ||
-                          member.getGid1().equals(i.getGid4()) ||
-                          member.getGid1().equals(i.getGid5()) ||
-                          member.getGid1().equals(member.getGid2())||
-                          member.getGid1().equals(member.getGid3())||
-                          member.getGid1().equals(member.getGid4())||
-                          member.getGid1().equals(member.getGid5())
+                                member.getGid1().equals(i.getGid1()) ||
+                                        member.getGid1().equals(i.getGid2()) ||
+                                        member.getGid1().equals(i.getGid3()) ||
+                                        member.getGid1().equals(i.getGid4()) ||
+                                        member.getGid1().equals(i.getGid5()) ||
+
+                                        member.getGid1().equals(member.getGid2())||
+                                        member.getGid1().equals(member.getGid3())||
+                                        member.getGid1().equals(member.getGid4())||
+                                        member.getGid1().equals(member.getGid5())
                         )||
 
-                        (
-                         member.getGid2().equals(i.getGid1()) ||
-                         member.getGid2().equals(i.getGid2()) ||
-                         member.getGid2().equals(i.getGid3()) ||
-                         member.getGid2().equals(i.getGid4()) ||
-                         member.getGid2().equals(i.getGid5()) ||
-                         member.getGid2().equals(member.getGid1())||
-                         member.getGid2().equals(member.getGid3())||
-                         member.getGid2().equals(member.getGid4())||
-                         member.getGid2().equals(member.getGid5())
-                        )||
+                                (
+                                        member.getGid2().equals(i.getGid1()) ||
+                                                member.getGid2().equals(i.getGid2()) ||
+                                                member.getGid2().equals(i.getGid3()) ||
+                                                member.getGid2().equals(i.getGid4()) ||
+                                                member.getGid2().equals(i.getGid5()) ||
 
-                        (
-                          (
-                            member.getGid3() != null && member.getGid3().equals(i.getGid3()) ||
-                            member.getGid3() != null &&member.getGid3().equals(i.getGid1()) ||
-                            member.getGid3() != null &&member.getGid3().equals(i.getGid2()) ||
-                            member.getGid3() != null &&member.getGid3().equals(i.getGid4()) ||
-                            member.getGid3() != null &&member.getGid3().equals(i.getGid5())) ||
-                            member.getGid3().equals(member.getGid2())||
-                            member.getGid3().equals(member.getGid1())||
-                            member.getGid3().equals(member.getGid4())||
-                            member.getGid3().equals(member.getGid5()
-                          )
-                        )||
+                                                member.getGid2().equals(member.getGid1())||
+                                                member.getGid2().equals(member.getGid3())||
+                                                member.getGid2().equals(member.getGid4())||
+                                                member.getGid2().equals(member.getGid5())
+                                )||
 
-                        (
-                          (
-                            (member.getGid4() != null && member.getGid4().equals(i.getGid3())) ||
-                            (member.getGid4() != null && member.getGid4().equals(i.getGid1()) )||
-                            (member.getGid4() != null && member.getGid4().equals(i.getGid2())) ||
-                            (member.getGid4() != null && member.getGid4().equals(i.getGid4())) ||
-                             (member.getGid4() != null && member.getGid4().equals(i.getGid5()) )||
-                             member.getGid4().equals(member.getGid2())||
-                             member.getGid4().equals(member.getGid1())||
-                             member.getGid4().equals(member.getGid3())||
-                             member.getGid4().equals(member.getGid5())
-                          )
-                        )||
+                                (
+                                        (
+                                                (member.getGid3() != null && member.getGid3().equals(i.getGid3())) ||
+                                                        (member.getGid3() != null &&member.getGid3().equals(i.getGid1())) ||
+                                                        (member.getGid3() != null &&member.getGid3().equals(i.getGid2()) )||
+                                                        (member.getGid3() != null &&member.getGid3().equals(i.getGid4())) ||
+                                                        (member.getGid3() != null &&member.getGid3().equals(i.getGid5()))) ||
 
-                        (
-                          (
-                                  (member.getGid5() != null && member.getGid5().equals(i.getGid3())) ||
-                                  (member.getGid5() != null && member.getGid5().equals(i.getGid1())) ||
-                                  (member.getGid5() != null && member.getGid5().equals(i.getGid2())) ||
-                                  (member.getGid5() != null && member.getGid5().equals(i.getGid4())) ||
-                                  (member.getGid5() != null && member.getGid5().equals(i.getGid5()))||
-                                  member.getGid5().equals(member.getGid2())||
-                                  member.getGid5().equals(member.getGid1())||
-                                  member.getGid5().equals(member.getGid3())||
-                                  member.getGid5().equals(member.getGid4())
-                          )
-                        )
+                                                (member.getGid3() != null &&member.getGid3().equals(member.getGid2()))||
+                                                (member.getGid3() != null &&member.getGid3().equals(member.getGid1()))||
+                                                (member.getGid3() != null &&member.getGid3().equals(member.getGid4()))||
+                                                (member.getGid3() != null &&member.getGid3().equals(member.getGid5())
+                                                )
+                                )||
+
+                                (
+                                        (
+                                                (member.getGid4() != null && member.getGid4().equals(i.getGid3())) ||
+                                                        (member.getGid4() != null && member.getGid4().equals(i.getGid1()) )||
+                                                        (member.getGid4() != null && member.getGid4().equals(i.getGid2())) ||
+                                                        (member.getGid4() != null && member.getGid4().equals(i.getGid4())) ||
+                                                        (member.getGid4() != null && member.getGid4().equals(i.getGid5()) )||
+
+                                                        (member.getGid4() != null && member.getGid4().equals(member.getGid2()))||
+                                                        ( member.getGid4() != null && member.getGid4().equals(member.getGid1()))||
+                                                        (member.getGid4() != null && member.getGid4().equals(member.getGid3()))||
+                                                        (member.getGid4() != null && member.getGid4().equals(member.getGid5()))
+                                        )
+                                )||
+
+                                (
+                                        (
+                                                (member.getGid5() != null && member.getGid5().equals(i.getGid3())) ||
+                                                        (member.getGid5() != null && member.getGid5().equals(i.getGid1())) ||
+                                                        (member.getGid5() != null && member.getGid5().equals(i.getGid2())) ||
+                                                        (member.getGid5() != null && member.getGid5().equals(i.getGid4())) ||
+                                                        (member.getGid5() != null && member.getGid5().equals(i.getGid5()))||
+
+                                                        (member.getGid5() != null && member.getGid5().equals(member.getGid2()))||
+                                                        (member.getGid5() != null && member.getGid5().equals(member.getGid1()))||
+                                                        (member.getGid5() != null && member.getGid5().equals(member.getGid3()))||
+                                                        (member.getGid5() != null && member.getGid5().equals(member.getGid4()))
+                                        )
+                                )
                 ) {
 
                     throw new RuntimeException("gid  already exists.");
