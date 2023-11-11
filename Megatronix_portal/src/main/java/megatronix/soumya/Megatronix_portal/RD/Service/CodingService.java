@@ -49,7 +49,17 @@ public class CodingService {
         Optional<MrdModel> gid2 = Optional.ofNullable(member.getGid2()).flatMap(repo::findById);
 
         if (gid1.isPresent() && (gid2.isPresent() || member.getGid2() == null)) {
-            return CompletableFuture.completedFuture(coding.save(member));
+            if(
+                 member.getGid1().equals(member.getGid2()) ||
+                 (member.getGid2()!=null && member.getGid2().equals(member.getGid1()))
+
+
+                    ){
+                throw new RuntimeException("gid  already exists.");
+            }
+            else {
+                return CompletableFuture.completedFuture(coding.save(member));
+            }
         }
         throw new RuntimeException("gid is not present");
     }
