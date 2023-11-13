@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21607fb6-a9c6-4635-bb75-db0afdc03f16" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Megatronix_portal/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CivilService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CivilService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CodingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/CodingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/ElectricalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/ElectricalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/RoboticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal/RD/Service/RoboticsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.capture&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
@@ -69,7 +70,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MegatronixPortalApplication">
     <configuration name="MegatronixPortalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="megatronix.soumya.Megatronix_portal.MegatronixPortalApplication" />
       <module name="Megatronix_portal" />
@@ -83,9 +84,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in Megatronix_portal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Megatronix_portal" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Megatronix_portal/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="Megatronix_portal/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MegatronixPortalApplication" />
+        <item itemvalue="Docker.Megatronix_portal/Dockerfile" />
+        <item itemvalue="JUnit.All in Megatronix_portal" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +139,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Megatronix_Portal_statc$MegatronixPortalApplication.ic" NAME="MegatronixPortalApplication Coverage Results" MODIFIED="1698175643968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Megatronix_Portal_statc$MegatronixPortalApplication.ic" NAME="MegatronixPortalApplication Coverage Results" MODIFIED="1699811610747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>megatronix.soumya.Megatronix_portal.*</FILTER>
     </SUITE>
   </component>
