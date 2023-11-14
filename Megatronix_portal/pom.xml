@@ -27,11 +27,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-<<<<<<< HEAD
 			<version>8.0.33</version>
-=======
-			<version>8.0.33</version> <!-- Use the version appropriate for your MySQL server -->
->>>>>>> 23333e29a0dedefb926d6b73145878f8d53ff60c
 		</dependency>
 
 
