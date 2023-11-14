@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21607fb6-a9c6-4635-bb75-db0afdc03f16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application-prod.porperties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Megatronix_portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
