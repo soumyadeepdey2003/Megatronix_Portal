@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21607fb6-a9c6-4635-bb75-db0afdc03f16" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application-prod.porperties" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application-prod.porperties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,21 +47,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/Megatronix_Portal_statc/Megatronix_portal",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -66,9 +71,11 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.MegatronixPortalApplication">
-    <configuration name="MegatronixPortalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MegatronixPortalApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-20" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="megatronix.soumya.Megatronix_portal.MegatronixPortalApplication" />
-      <module name="megatronix_portal" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Megatronix_portal/src/main/java/megatronix/soumya/Megatronix_portal" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="megatronix.soumya.Megatronix_portal.*" />
@@ -118,7 +125,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MegatronixPortalApplication" />
         <item itemvalue="Docker.Megatronix_portal/Dockerfile" />
         <item itemvalue="JUnit.All in Megatronix_portal" />
       </list>
