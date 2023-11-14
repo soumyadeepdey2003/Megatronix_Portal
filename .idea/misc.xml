@@ -11,6 +11,9 @@
       <item index="7" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Autowired" />
       <item index="8" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Qualifier" />
       <item index="9" class="java.lang.String" itemvalue="org.springframework.context.annotation.Bean" />
+      <item index="10" class="java.lang.String" itemvalue="javax.annotation.PostConstruct" />
+      <item index="11" class="java.lang.String" itemvalue="javax.annotation.PreDestroy" />
+      <item index="12" class="java.lang.String" itemvalue="javax.annotation.Resource" />
     </list>
     <writeAnnotations>
       <writeAnnotation name="org.springframework.beans.factory.annotation.Autowired" />

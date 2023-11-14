@@ -8,11 +8,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Megatronix_portal" />
+        <module name="megatronix_portal" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="megatronix_portal" target="17" />
+      <module name="Megatronix_portal" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

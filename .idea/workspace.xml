@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21607fb6-a9c6-4635-bb75-db0afdc03f16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Megatronix_portal/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Megatronix_portal/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Megatronix_portal/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -59,7 +59,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.capture&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
@@ -73,7 +73,7 @@
   <component name="RunManager" selected="Application.MegatronixPortalApplication">
     <configuration name="MegatronixPortalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="megatronix.soumya.Megatronix_portal.MegatronixPortalApplication" />
-      <module name="Megatronix_portal" />
+      <module name="megatronix_portal" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="megatronix.soumya.Megatronix_portal.*" />
@@ -88,6 +88,19 @@
       <module name="Megatronix_portal" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Megatronix_portal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Megatronix_portal" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,7 +152,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Megatronix_Portal_statc$MegatronixPortalApplication.ic" NAME="MegatronixPortalApplication Coverage Results" MODIFIED="1699811610747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Megatronix_Portal_statc$MegatronixPortalApplication.ic" NAME="MegatronixPortalApplication Coverage Results" MODIFIED="1699929462726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>megatronix.soumya.Megatronix_portal.*</FILTER>
     </SUITE>
   </component>
