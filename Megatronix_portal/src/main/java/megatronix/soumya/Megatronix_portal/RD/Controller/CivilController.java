@@ -28,7 +28,7 @@ public class CivilController {
     public CompletableFuture<String> civilregister(@ModelAttribute("civil") CivilModel member, Model model) {
         System.out.println("hi");
         try {
-            CompletableFuture<CivilModel> registeredMember = service.CivilMainRd(member);
+            CompletableFuture<CivilModel> registeredMember = service.CivilRd(member);
             model.addAttribute("Rduser", registeredMember.get());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {

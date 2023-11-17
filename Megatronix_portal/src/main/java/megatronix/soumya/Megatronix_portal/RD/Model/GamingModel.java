@@ -24,6 +24,7 @@ public class GamingModel {
 
     private  String selectedgamingevent;
     private Long gid1;
+    @Column(nullable = true)
     private Long gid2;
     @Column(nullable = true)
     private Long gid3;

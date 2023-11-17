@@ -21,14 +21,14 @@ public class GamingService {
     public CompletableFuture<GamingModel> GamingOnSportRd(GamingModel member) {
 
         Optional<MrdModel> gid1 = repo.findById(member.getGid1());
-        Optional<MrdModel> gid2 = repo.findById(member.getGid2());
+        Optional<MrdModel> gid2 = Optional.ofNullable(member.getGid2()).flatMap(repo::findById);
         Optional<MrdModel> gid3 = Optional.ofNullable(member.getGid3()).flatMap(repo::findById);
         Optional<MrdModel> gid4 = Optional.ofNullable(member.getGid4()).flatMap(repo::findById);
         Optional<MrdModel> gid5 = Optional.ofNullable(member.getGid5()).flatMap(repo::findById);
-        if ( gid1.isPresent() &&
-                gid2.isPresent() &&
-                (gid3.isPresent() || member.getGid3() == null)  &&
-                (gid4.isPresent() || member.getGid4() == null)  &&
+        if (gid1.isPresent() &&
+                (gid2.isPresent() || member.getGid2() == null) &&
+                (gid3.isPresent() || member.getGid3() == null) &&
+                (gid4.isPresent() || member.getGid4() == null) &&
                 (gid5.isPresent() || member.getGid5() == null)
         ) {
             if(
@@ -39,10 +39,10 @@ public class GamingService {
                                     member.getGid1().equals(member.getGid5())
                     )||
                             (
-                                    member.getGid2().equals(member.getGid1())||
-                                            member.getGid2().equals(member.getGid3())||
-                                            member.getGid2().equals(member.getGid4())||
-                                            member.getGid2().equals(member.getGid5())
+                                    (member.getGid2() != null &&member.getGid2().equals(member.getGid1()))||
+                                            (member.getGid2() != null &&member.getGid2().equals(member.getGid3()))||
+                                            (member.getGid2() != null &&member.getGid2().equals(member.getGid4()))||
+                                            (member.getGid2() != null &&member.getGid2().equals(member.getGid5()))
                             )||
                             (
                                     (member.getGid3() != null &&member.getGid3().equals(member.getGid2()))||

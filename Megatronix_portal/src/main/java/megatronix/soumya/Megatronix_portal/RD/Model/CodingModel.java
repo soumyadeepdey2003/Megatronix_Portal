@@ -17,7 +17,7 @@ public class CodingModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = true)
     private String teamname;
     @Column(name = "selectedcodingevent" , nullable = false)
     private  String selectedcodingevent;

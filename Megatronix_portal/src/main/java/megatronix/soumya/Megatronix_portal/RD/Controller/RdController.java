@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CompletableFuture;
 
 @Controller
@@ -59,29 +62,26 @@ public class RdController {
 
 
 
-    //    @PostMapping("/rd")
 //    @Async
-//    public CompletableFuture<String> submitForm(@ModelAttribute("rdmain") Rdmain rdmain, RedirectAttributes redirectAttributes) {
+//    @RequestMapping(value="/rd", method = RequestMethod.POST)
+//    public CompletableFuture<String> processForm(@ModelAttribute("rdmain") Rdmain rdmain, RedirectAttributes redirectAttributes) {
+//        System.out.println("hi");
 //        String selectedDomain = rdmain.getSelectedDomain();
-//
-//        // Use the selected domain to construct the redirect path
-//
 //        redirectAttributes.addAttribute("selectedDomain", selectedDomain);
-//        if(rdmain.getSelectedDomain().equals("coding"))
-//          return CompletableFuture.completedFuture("redirect:/rd/coding" );
-//        else if (rdmain.getSelectedDomain().equals("civil"))
-//          return CompletableFuture.completedFuture("redirect:/rd/civil" );
-//        else if (rdmain.getSelectedDomain().equals("robotics"))
-//            return CompletableFuture.completedFuture("redirect:/rd/robotics" );
-//        else if(rdmain.getSelectedDomain().equals("electrical"))
-//            return CompletableFuture.completedFuture("redirect:/rd/electrical" );
-//        else if(rdmain.getSelectedDomain().equals("gaming"))
-//            return CompletableFuture.completedFuture("redirect:/rd/gaming" );
-//        else if(rdmain.getSelectedDomain().equals("general"))
-//            return CompletableFuture.completedFuture("redirect:/rd/general" );
-//        else
-//            return CompletableFuture.completedFuture("rd");
+//        return CompletableFuture.completedFuture("redirect:/rd/" + selectedDomain);
 //    }
+
+    @Async
+    @RequestMapping(value="/rd", method = RequestMethod.POST)
+    public CompletableFuture<String> processForm(@ModelAttribute("rdmain") Rdmain rdmain, RedirectAttributes redirectAttributes) throws RuntimeException {
+        try {
+            return rdService.handleSelectedDomain(rdmain.getSelectedDomain());
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error");
+        }
+
+    }
 
 
 //    @PostMapping("/rd")
@@ -99,7 +99,7 @@ public class RdController {
 //        model.addAttribute("electricalRd", new ElectrialModel());
 //        model.addAttribute("gamingRd", new GamingModel());
 //        model.addAttribute("generalRd", new GeneralModel());
-//
+//e
 //        return rdService.handleSelectedDomain(selectedDomain);
 //    }
 

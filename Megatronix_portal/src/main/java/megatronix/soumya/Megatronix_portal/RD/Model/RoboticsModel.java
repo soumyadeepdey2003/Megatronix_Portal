@@ -21,11 +21,12 @@ public class RoboticsModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(nullable = true)
     private String  teamname;
 
     private  String selectedroboticsevent;
     private Long gid1;
+    @Column(nullable = true)
     private Long gid2;
     @Column(nullable = true)
     private Long gid3;

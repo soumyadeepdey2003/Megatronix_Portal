@@ -5,9 +5,9 @@
 </head>
 <body>
 <h1>Select a Domain:</h1>
-<form action="@{/rd_success}" method="post" th:object="${rdmain}">
-    <label for="domain">Choose a Domain:</label>
-    <select id="domain" name="domain" th:field="${rdmain.selectedDomain}">
+<form th:action="@{/rd}" method="post" th:object="${rdmain}">
+    <label for="selectedDomain">Choose a Domain:</label>
+    <select id="selectedDomain" name="selectedDomain" th:field="*{selectedDomain}">
         <option value="coding">Coding Domain</option>
         <option value="robotics">Robotics Domain</option>
         <option value="civil">Civil Domain</option>

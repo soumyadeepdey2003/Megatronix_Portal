@@ -25,7 +25,7 @@ public class GeneralController {
     @Async
     public CompletableFuture<String> register(@ModelAttribute("general") GeneralModel member, Model model) {
         try {
-            CompletableFuture<GeneralModel> registeredMember = service.GeneralOnSportRd(member);
+            CompletableFuture<GeneralModel> registeredMember = service.GeneralRd(member);
             model.addAttribute("Rduser", registeredMember.get());
             return CompletableFuture.completedFuture("rd-success");
         } catch (Exception e) {
