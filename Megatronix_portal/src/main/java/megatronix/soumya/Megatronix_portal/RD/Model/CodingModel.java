@@ -27,6 +27,8 @@ public class CodingModel {
 
     private String number1;
 
+    private boolean played=false;
+
     public Long getId() {
         return id;
     }
@@ -73,5 +75,14 @@ public class CodingModel {
 
     public void setNumber1(String number1) {
         this.number1 = number1;
+    }
+
+
+    public boolean isPlayed() {
+        return played;
+    }
+
+    public void setPlayed(boolean played) {
+        this.played = played;
     }
 }

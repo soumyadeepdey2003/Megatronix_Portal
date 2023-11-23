@@ -39,6 +39,8 @@ public class RoboticsModel {
     @Column(nullable = true)
     private String number2;
 
+    private boolean played=false;
+
     public Long getId() {
         return id;
     }
@@ -118,4 +120,11 @@ public class RoboticsModel {
     }
 
 
+    public boolean isPlayed() {
+        return played;
+    }
+
+    public void setPlayed(boolean played) {
+        this.played = played;
+    }
 }

@@ -40,6 +40,8 @@ public class CivilModel {
     @Column(nullable = true)
     private String number2;
 
+    private boolean played=false;
+
     public Long getId() {
         return id;
     }
@@ -108,6 +110,12 @@ public class CivilModel {
 
     public void setNumber2(String number2) {
         this.number2 = number2;
+    }
+    public boolean isPlayed() {
+        return played;
+    }
+    public void setPlayed(boolean played) {
+        this.played = played;
     }
 }
 

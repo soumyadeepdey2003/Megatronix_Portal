@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface CodingRepo extends JpaRepository<CodingModel, Long> {
@@ -19,4 +20,5 @@ public interface CodingRepo extends JpaRepository<CodingModel, Long> {
 
 
     List<CodingModel> findBySelectedcodingevent(String selectedcodingevent);
+    Optional<CodingModel> findById(Long id);
 }

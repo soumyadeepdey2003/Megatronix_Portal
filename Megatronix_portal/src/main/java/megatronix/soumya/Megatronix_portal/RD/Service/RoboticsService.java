@@ -197,7 +197,7 @@ public class RoboticsService {
     }
     @Async
     public CompletableFuture<RoboticsModel> RoboticsRd(RoboticsModel member) {
-        if(member.getselectedroboticsevent().equals("Event5") || member.getselectedroboticsevent().equals("Event4"))
+        if(member.getselectedroboticsevent().equals("Event5") || member.getselectedroboticsevent().equals("Event4")||member.getselectedroboticsevent().equals("Event6"))
             return RoboticsOnSportRd( member);
         else
             return RoboticsMainRd(member);

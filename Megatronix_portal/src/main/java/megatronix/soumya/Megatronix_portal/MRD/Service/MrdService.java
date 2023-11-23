@@ -16,9 +16,6 @@ public class MrdService {
 
     @Async
     public CompletableFuture<MrdModel> registerMember(MrdModel member) {
-//        if (MrdRepository.existsByEmail(member.getEmail()) || MrdRepository.existsByPhoneNumber(member.getPhoneNumber())) {
-//            throw new RuntimeException("Email or phone number already exists.");
-//        }
 
         return CompletableFuture.completedFuture(MrdRepository.save(member));
     }
